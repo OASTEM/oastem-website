@@ -1,0 +1,157 @@
+@font-face {
+  font-family: 'Exo';
+  font-weight: 500;
+  font-style: normal;
+  src: local('Exo Medium'), local('Exo-Medium'), url(http://themes.googleusercontent.com/static/fonts/exo/v1/yLVQVmQgTSUkafMu4HoVJA.woff) format('woff');
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* reset done */
+body {
+	background: #EEE url(../images/back2.png);
+	min-width: 600px;
+}
+
+#oalogo {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+}
+
+table#boxy {
+	margin: 0 auto;
+}
+
+table#boxy td.box {
+	width: 180px; height: 200px;
+	overflow: hidden;
+	border: 10px solid transparent;
+	padding: 10px;
+}
+
+td.box#science {
+	background: #34cd34 url(http://oastem.org/images/S.png) no-repeat center center;
+}
+
+td.box#technology {
+	background: #729dd9 url(http://oastem.org/images/T.png) no-repeat center center;
+}
+
+td.box#engineering {
+	background: #df7122 url(http://oastem.org/images/E.png) no-repeat center center;
+}
+
+td.box#math {
+	background: #f1b216 url(http://oastem.org/images/M.png) no-repeat center center;
+}
+
+p.info {
+	display: none;
+	width: 180px;
+	text-align: center;
+	font-family: Tahoma;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
+h1, h2 {
+	text-align: center;
+	margin: 0.25em;
+	font-family: 'Exo', Tahoma, sans-serif;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 250%;
+}
+
+div#fb-root {
+	width: 450px;
+	margin: 2em auto;
+}
+
+#flash .small {
+	float: right;
+	font-size: 85%;
+}
+
+#flash {
+	color: #FFF;
+	padding: 6px;
+	cursor: default;
+	font-family: Tahoma, sans-serif;
+	font-size: 12px;
+	border-bottom: 1px solid #000;
+}
+
+#flash.error {
+	background: #c70b32;
+}
+
+#flash.error:hover {
+	background: #d70c36;
+}
+
+#flash.notice {
+	background: #cb8712;
+}
+
+#flash.notice:hover {
+	background: #db9113;
+}
+
+#flash.success { 
+	background: #107209;
+}
+
+#flash.success:hover { 
+	background: #15920b;
+}
