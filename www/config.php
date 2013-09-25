@@ -1,10 +1,10 @@
 <?php
 
 $dbhost = 'localhost';
-$dbport = 'Database Port';
-$dbname = 'Database Name';
-$dbuser = 'Database Username';
-$dbpass = 'Database Password';
+$dbport = '3306';
+$dbname = 'stem';
+$dbuser = 'robots';
+$dbpass = 'robenception';
 
 $rt = '/';
 $rtexact = $_SERVER['DOCUMENT_ROOT'] . '/';
