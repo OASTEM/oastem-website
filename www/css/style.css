@@ -473,7 +473,7 @@ nav ul{
 	margin-left:37%;
 	
 	position:relative;
-	display: inline-table;
+	/* display: inline-table; */
 }
 
 nav ul:after {
@@ -483,11 +483,11 @@ nav ul:after {
 }
 
 nav ul li {
-	float:left;
+	/* float:left; */
 }
 
 nav ul li:hover{
-	background-color:#333333;
+	/* background-color:#333333; */
 }
 
 nav ul li:hover a{
@@ -496,7 +496,7 @@ nav ul li:hover a{
 }
 
 nav ul li a {
-	display: block;
+	/* display: block; */
 	padding: 5px;
 	color:#fff;
 	
