@@ -2,11 +2,8 @@
 class MySQL {
 	var $connect;
 	var $prefix;
-	var $debug;
 	
-	public function __construct($host, $port, $db, $user, $pass, $socket = false, $prefix = 'kt_') {
-		//$this->debug = ($_SERVER['REMOTE_ADDR'] == '192.168.1.108');
-	
+	public function __construct($host, $port, $db, $user, $pass, $socket = false, $prefix = '') {
 		$this->prefix = $prefix;
 		
 		if ($socket) {
@@ -31,16 +28,14 @@ class MySQL {
 	}
 	
 	function query($query, $array = false) {
-		if ($this->debug) print "QUERY!{$query}\n\n";
 		$querya = $this->connect->query($query);
 		if ($querya === false) return $this->error();
-		if ($array) return $this->fetchRows($querya, MYSQL_ASSOC);
+		if ($array) return $this->fetchRows($querya, MYSQLI_ASSOC);
 		
 		return $querya;
 	}
 	
 	public function getRow($query) {
-		if ($this->debug) print 'getRow';
 		$querya = $this->connect->query($query);
 		if ($querya === false) return $this->error();
 		$row = $querya->fetch_assoc();
@@ -49,17 +44,12 @@ class MySQL {
 	}
 	
 	public function getValue($query, $col) {
-		if ($this->debug) print 'getVal';
 		$querya = $this->connect->query($query);
 		if ($querya === false) return $this->error();
 		$row = $querya->fetch_assoc();
 		$this->free($querya);
 		if ($row == false) return null;
 		return $row[$col];
-	}
-	
-	public function DEBUG($query) {
-		print_r($this->query($query, true));
 	}
 	
 	public function free($query) {
