@@ -1,0 +1,41 @@
+oastem.org changes:
+1:	change pictures on front page
+//2:	remove deadline for application
+3:	fix contact page
+4:	new logo
+5:	make separate tabs for reach department( or make one tab for departments and put info about each department in there)
+6:	get rid of stuff about department in FAQ
+7:	make tab for how to apply or something and put link to application and whatever else I feel is necessary
+
+oastem.org
+stem
+robotlewin
+
+<span class="code-comment">/*--- DROPDOWN ---*/</span>
+#nav ul{
+    background:#fff; <span class="code-comment">/* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */</span>
+    background:rgba(255,255,255,0); <span class="code-comment">/* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */</span>
+    list-style:none;
+    position:absolute;
+    left:-9999px; <span class="code-comment">/* Hide off-screen when not needed (this is more accessible than display:none;) */</span>
+}
+#nav ul li{
+    padding-top:1px; <span class="code-comment">/* Introducing a padding between the li and the a give the illusion spaced items */</span>
+    float:none;
+}
+#nav ul a{
+    white-space:nowrap; <span class="code-comment">/* Stop text wrapping and creating multi-line dropdown items */</span>
+}
+#nav li:hover ul{ <span class="code-comment">/* Display the dropdown on hover */</span>
+    left:0; <span class="code-comment">/* Bring back on-screen when needed */</span>
+}
+#nav li:hover a{ <span class="code-comment">/* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */</span>
+    background:#6b0c36;
+    text-decoration:underline;
+}
+#nav li:hover ul a{ <span class="code-comment">/* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */</span>
+    text-decoration:none;
+}
+#nav li:hover ul li a:hover{ <span class="code-comment">/* Here we define the most explicit hover states--what happens when you hover each individual link. */</span>
+    background:#333;
+}</code>
