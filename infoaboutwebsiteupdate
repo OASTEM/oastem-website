@@ -9,9 +9,7 @@ oastem.org changes:
 6:	get rid of stuff about department in FAQ
 7:	make tab for how to apply or something and put link to application and whatever else [Alex Gao] feel is necessary
 
-oastem.org
-stem
-robotlewin
+Make sure to do a "git pull oastem-website" on the server in /var/www/stem to synchronize changes to the production server
 
 <span class="code-comment">/*--- DROPDOWN ---*/</span>
 #nav ul{
