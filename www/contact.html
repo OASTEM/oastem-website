@@ -1,63 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Contact Us &raquo; OA STEM</title>
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="/js/s3Slider.js"></script>
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<?php
+require('./common.php');
 
-  ga('create', 'UA-44336641-1', 'oastem.org');
-  ga('send', 'pageview');
-</script>
+if (isset($_POST['submit'])) {
+	if (isset($_SESSION['lastMessage']) && time() - $_SESSION['lastMessage'] < 60) {
+		setFlash("error", "Woah, calm down there. Send your message again in a minute!");
+	} else if (isset($_SESSION['hash']) && isset($_POST['token']) && $_SESSION['hash'] != $_POST['token']) {
+		setFlash("error", "There was an error submitting the form.");
+	} else {
+		$email = str_replace(array("\r", "\n"), '', $_POST['email']);
+		$headers = 'Reply-To: ' . $email . "\r\n" .
+    			'X-Mailer: PHP/' . phpversion();
+		mail("contact@oastem.org", "Message from {$_SERVER['REMOTE_ADDR']} ({$_POST['name']})", $_POST['message']."\n\n\nE-mail: {$email}", $headers);
+		setFlash("success", "Thank you! Your message has been sent.");
+	}
+	$_SESSION['lastMessage'] = time();
+} else if (!isset($_SESSION['hash'])) {
+	$hash = md5(mt_rand(1,1000000) . $salt);
+	$_SESSION['hash'] = $hash;
+}
 
-<link rel="icon" href="/favicon.png" type="image/png">
-<link rel="StyleSheet" href="/css/style.css" />
-</head>
-<body>
-<div id="container">
-	<div id="head">
-		<div id="headInner">
-			<h1><span>Oxford Academy STEM</span></h1>
-			<div id="navbar">
-				<ul id="navmain">
-					<li><a href="/index.html">Home</a></li>
-					<li><a href="/faq.html">FAQ</a></li>
-					<li><a href="/contact.html">Contact</a></li>
-					<li><a href="/about.html">About</a></li>
-				</ul>
-			</div>
-		</div><!-- #headInner -->
-	</div><!-- #head -->
-	
-	<div id="shadow"></div>
-
+$templ->setTitle('Contact Us');
+$templ->render('header');
+?>
 	<div id="content">
-		<div id="maincol">
-			<div class="post">
-				<h1><span>Contact Us</span></h1>
-				<h6>General Contact</h6>
-				<p><a href="mailto:contact@oastem.org">Email</a><br />
-				</p>
-			</div>
+		<div class="two column post">
+			<h1><span>Contact Us</span></h1>
+			<p>Thanks for your interest in Oxford Academy STEM! If you have any additional questions about our STEM program specifically, you can reach us using the contact form to your right, or at <a href="mailto:contact@oastem.org">contact@oastem.org</a>.</p>
+			<p>If you would like to reach us through mail, you can write to us, Oxford Academy STEM, at <a href="http://maps.google.com/maps?q=5172+Orange+Ave,+Room+201,+Cypress,+CA+90630&gl=us&t=m&z=16">5172 Orange Ave, Room 201, Cypress, CA 90630</a>.</p>
+		</div>
+		
+		<div class="two column post">
+			<form method="POST">
+				<input type="hidden" name="token" value="<?php print $_SESSION['hash']; ?>" />
+				<table class="plain" id="contact">
+					<tr>
+						<td>Name</td><td><input type="text" name="name" /></td>
+						<td>E-mail</td><td><input type="text" name="email" /></td>
+					</tr>
+					<tr>
+						<td colspan="4"><textarea name="message" rows="14" cols="50"></textarea></td>
+					</tr>
+					<tr>
+						<td colspan="4" class="text-right"><input type="submit" name="submit" value="Submit" /></td>
+					</tr>
+				</table>
+			</form>
 		</div>
 	</div>
-	
-	<div id="footer">
-		<ul id="nav">
-			<li><a href="contact.html">Contact</a></li>
-			<li><a href="about.html">About</a></li>
-		</ul>
-
-		<div class="right">
-			&copy; 2012
-		</div>
-
-		<div style="clear:both"></div>
-	</div>
-</div>
-</body>
-</html>
+<?php
+$templ->render('footer');
+?>

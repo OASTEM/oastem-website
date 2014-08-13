@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,300italic,300,600,600italic,700italic);
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -23,6 +25,8 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+strong, b { font-weight: bold; }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -52,14 +56,18 @@ table {
 
 /** End CSS reset **/
 
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
 body {
-	background: #EEE url(../images/back2.png);
+	background: #EEE /*url(../images/back2.png)*/;
 	font-family: "Tahoma", sans-serif;
 	font-size: 12px;
 }
 
 a {
-	color: #334E69;
+	color: #497097;
 	text-decoration: none;
 }
 
@@ -68,37 +76,47 @@ a:hover {
 	color: #1A2836;
 }
 
+div.post ul {
+	margin-top: 0.5em;
+	margin-left: 2em;
+}
+
+div.post {
+	margin-bottom: 1em;
+}
+
 div#container {
 
 }
 
 div#content {
-	width: 1000px;
+	text-align: center;
 	margin: 1em auto;
+	width: 1005px;
 }
 
 div#content.nomargin {
 	margin-top: 0;
 }
 
-div#head {
+header {
 	height: 180px;
-	background: url(../images/head-2.png);
+	background: #222 /*url(../images/head-2.png)*/;
 }
 
-div#headInner {
+headerInner {
 	height: 180px;
-	background: url(../images/headHighlight.png) 50% 50% no-repeat;
+	/*background: url(../images/headHighlight.png) 50% 50% no-repeat;*/
 }
 
-div#head h1 {
-	background: url(../images/stemWhite2.png) 50% 50% no-repeat;
+header h1 {
+	background: url(../images/logo.png) 50% 50% no-repeat;
 	width: 1000px;
 	height: 150px;
 	margin: 0 auto;
 }
 
-div#head h1 span {
+header h1 span {
 	display: none;
 }
 
@@ -110,8 +128,9 @@ div#shadow {
 	z-index: 100;
 }
 
-div#navbar {
-	
+nav {
+	background: #111;
+	height: 30px;
 }
 
 ul#navmain {
@@ -134,7 +153,8 @@ ul#navmain li a {
 }
 
 ul#navmain li a:hover {
-	background: rgba(80, 80, 80, 0.3);
+	background: #222;
+	border: 0;
 }
 
 hr {
@@ -145,22 +165,55 @@ hr {
 
 p {
 	margin: 0.5em 0;
-	line-height: 1.25em;
+	line-height: 1.5em;
 }
 
 p:first-child { 
 	margin: 0;
 }
 
-.left {
-	float: left;
-}
+.left { float: left; }
+.text-left { text-align: left; }
 
-.right {
+.text-center, .post.text-center { text-align: center; }
+
+.right { float: right; }
+.text-right { text-align: right; }
+
+.flash .small {
 	float: right;
+	font-size: 85%;
 }
 
-div#footer {
+.flash {
+	color: #FFF;
+	padding: 6px;
+	cursor: default;
+}
+
+.flash:hover {
+	text-decoration: underline;
+}
+
+.flash.error {
+	background: #711;
+}
+
+.flash.notice {
+	background: #8b832b;
+}
+
+.flash.success { 
+	background: #171;
+}
+
+.flash p {
+	margin: 0;
+	line-height: 1em;
+	display: inline;
+}
+
+footer {
 	padding: 1em 0em 2em 1em;
 	color: #777;
 	clear: both;
@@ -168,24 +221,24 @@ div#footer {
 	margin: 0 auto;
 }
 
-div#footer ul#nav {
+footer ul#nav {
 	list-style-type: none;
 	margin: 0;
 	float: left;
 }
 
-div#footer ul#nav li {
+footer ul#nav li {
 	display: inline;
 	text-transform: lowercase;
 }
 
-div#footer ul#nav li a {
+footer ul#nav li a {
 	text-decoration: none;
 	color: #777;
 	margin-right: 1em;
 }
 
-div#footer ul#nav li a:hover {
+footer ul#nav li a:hover {
 	color: #333;
 	border-bottom: 1px dotted #777;
 }
@@ -203,6 +256,31 @@ ul#slideshowContent {
     position: absolute;
 	top: 0;
 	margin: 0;
+}
+
+.column {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.three {
+	width: 330px;
+}
+
+.two {
+	width: 500px;
+}
+
+.one {
+	width: 1000px;
+}
+
+.quarter {
+	width: 248px;
+}
+
+.three-quarters {
+	width: 750px;
 }
 
 /*ul#slideshowContent li:last-child {
@@ -272,6 +350,51 @@ li.slideshowImage span.right {
     left: 0;
 }
 
+.science {
+	background-color: #34cd34;
+}
+
+.technology {
+	background-color: #729dd9;
+}
+
+.engineering {
+	background-color: #f75111;
+}
+
+.mathematics {
+	background-color: #f1b216;
+}
+
+table {
+	width: 100%;
+}
+
+table th, table td {
+	text-align: center;
+	padding: 1em;
+	border: 1px solid #ccc;
+}
+
+table th {
+	font-family: "Titillium Web", sans-serif;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+table td {
+	
+}
+
+table.plain {
+	width: auto;
+}
+
+table.plain th, table.plain td {
+	padding: 0;
+	border: none;
+}
+
 /* content */
 div#nav-posts {
 	background: rgba(60, 60, 60, 0.3);
@@ -294,6 +417,7 @@ div.post {
 	margin-top: 1em;
 	font-family: Georgia, "Times New Roman", serif;
 	font-size: 14px;
+	text-align: left;
 }
 
 div.post.singular {
@@ -304,9 +428,10 @@ div.post.singular {
 
 div.post h1 {
 	width: 100%;
-	font-family: "Tahoma", sans-serif;
+	font-family: "Titillium Web", sans-serif;
+	font-weight: bold;
 	font-size: 30px;
-	margin-bottom: 0.5em;
+	margin: 0.25em 0 0.5em 0;
 }
 
 div.post h1 a:hover {
@@ -314,13 +439,15 @@ div.post h1 a:hover {
 }
 
 div.post h2 {
-	font-family: "Tahoma", sans-serif;
+	font-family: "Titillium Web", sans-serif;
+	font-weight: bold;
 	font-size: 20px;
-	margin-bottom: 0.5em;
+	margin: 0.25em 0 0.5em 0;
 }
 
 div.post p {
 	text-indent: 2em;
+	margin-bottom: 0.5em;
 }
 
 div.post h3 {
@@ -385,8 +512,7 @@ div#comments-box textarea {
 div#maincol {
 	padding: 0.5em;
 	float: left;
-	width: 988px;
-	width: 988px;
+	width: 1000px;
 }
 
 div#sidebar {
@@ -423,7 +549,7 @@ div#faqQuestions {
 }
 
 div#faqQuestions a {
-	border: none;
+	color: #497097;
 }
 
 ul {
@@ -533,96 +659,81 @@ nav ul ul ul{
 	top:0;
 }
 
-
-/**More rest**
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
-	margin:0;
-	padding:0;
-}
-table{
-	border-collapse:collapse;
-	border-spacing:0;
-}
-fieldset,img{
-	border:0;
-}
-address,caption,cite,code,dfn,th,var{
-	font-style:normal;
-	font-weight:normal;
-}
-caption,th{
-	text-align:left;
-}
-h1,h2,h3,h4,h5,h6{
-	font-size:100%;
-	font-weight:normal;
-}
-q:before,q:after{
-	content:'';
-}
-abbr,acronym{
-	border:0;
+input[type='text'], input[type='password'], input[type='submit'], select, button, textarea {
+	background: #E2E2E2;
+	border: 1px solid #CCC;
+	padding: 3px;
+	font-family: Tahoma, sans-serif;
+	font-size: 12px;
+	margin: 0 1em;
 }
 
+input[type='text']:hover, input[type='password']:hover, input[type='submit']:hover, select:hover, button:hover, textarea:hover {
+	background: #DDD;
+	border: 1px solid #BBB;
+}
 
-.hoverNav{
-	list-style:none;
-	font-family:"Tahoma", sans-serif;
-	background-color:transparent;
-	margin-top:2px;
-	margin-left:37%;
-	margin-right:33%;
-	float:left;
-	width:100%;
-	position:relative;
-	z-index:5;
+input[type='text']:focus, input[type='password']:focus, input[type='submit']:active, select:focus, button:active, textarea:focus {
+	background: #EEE;
+	border: 1px solid #AAA;
+}
+
+input[type='text'], input[type='password'] {
+	width: 175px;
+}
+
+input[type='text'].num {
+	width: 25px;
+}
+
+input[type='submit'] {
+	padding-left: 5px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+
+
+table#contact textarea {
+	margin: 1em;
+	width: 450px;
+}
+
+/* Yay responsive design */
+/*@media (max-width: 767px) {
+	header {
+		height: 30px;
+	}
 	
-}
-.hoverNav li{
-	float:left;
+	header h1 {
+		background: none;
+	}
 	
-	margin-right:10px;
-	position:relative;
-}
-.hoverNav a{
-	display:block;
-	padding:5px;
+	header h1 span {
+		display: inline;
+	}
 	
-	color:#fff;
-	background-color:transparent;
-	text-decoration:none;
-}
-.hoverNav a:hover{
-	color:#fff;
-	background-color:transparent;
-	text-decoration:underline;
-}
-.hoverNav ul{
-    background:#ddd;
-    background:rgba(255,255,255,0);
-    list-style:none;
-    position:absolute;
-    left:-9999px; 
-}
-.hoverNav ul li{
-    padding-top:1px; 
-    float:none;
-}
-.hoverNav ul a{
-    white-space:nowrap; 
-}
-.hoverNav li:hover ul{ 
-    left:0; 
-}
-.hoverNav li:hover a{ 
-    background:#333333;
-    text-decoration:underline;
-    left:0;
-}
-.hoverNav li:hover ul a{ 
-    text-decoration:none;
-}
-.hoverNav li:hover ul li a:hover{ 
-    background:#333;
-}
-*/
+	.three {
+		width: 33%;
+	}
+
+	.two {
+		width: 50%;
+	}
+
+	.one {
+		width: 100%;
+	}
+
+	.quarter {
+		width: 25%;
+	}
+
+	.three-quarters {
+		width: 75%;
+	}
+	
+	div#slideshow, ul#slideshowContent, li.slideshowImage span, footer, header h1, div#content {
+		width: 100%;
+	}
+}*/
