@@ -1,65 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>About Us &raquo; OA STEM</title>
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="/js/s3Slider.js"></script>
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<?php
+require('./common.php');
 
-  ga('create', 'UA-44336641-1', 'oastem.org');
-  ga('send', 'pageview');
-</script>
-
-<link rel="icon" href="/favicon.png" type="image/png">
-<link rel="StyleSheet" href="/css/style.css" />
-</head>
-<body>
-<div id="container">
-	<div id="head">
-		<div id="headInner">
-			<h1><span>Oxford Academy STEM</span></h1>
-			<div id="navbar">
-				<ul id="navmain">
-					<li><a href="/index.html">Home</a></li>
-					<li><a href="/faq.html">FAQ</a></li>
-					<li><a href="/contact.html">Contact</a></li>
-					<li><a href="/about.html">About</a></li>
-				</ul>
-			</div>
-		</div><!-- #headInner -->
-	</div><!-- #head -->
-	
-	<div id="shadow"></div>
-
+$templ->setTitle('About Us');
+$templ->render('header');
+?>
 	<div id="content">
-		<div id="maincol">
-			<div class="post">
-				<h1><span>About Us</span></h1>
-				<p>STEM is the sole Science, Technology, Engineering, and Mathematics-focused organization on Oxford Academy's campus. Of distinction is OA STEM's hybrid club-team organization: club in that OA STEM consists of a group of like-minded and similarly-interested students meeting for activities, team in that OA STEM takes part in some of the most competitive contests in the nation.</p>
+		<div class="one column post">
+			<h1><span>About Us</span></h1>
+			<p>STEM is the sole <a href="#science">Science</a>, <a href="#technology">Technology</a>, <a href="#engineering">Engineering</a>, and <a href="#math">Mathematics</a> focused organization on Oxford Academy's campus. Of distinction is OA STEM's hybrid club-team organization: club in that OA STEM consists of a group of like-minded and similarly-interested students meeting for activities, team in that OA STEM takes part in some of the most competitive contests in the nation.</p>
 
-				<p>By expanding on OA STEM's position as the premier, largest, and only STEM-focused team in a school for the most talented students in the state, the team's membership and sponsorship are almost sure to grow.</p>
+			<p>By expanding on OA STEM's position as the premier, largest, and only STEM-focused team in a school for the most talented students in the state, the team's membership and sponsorship are almost sure to grow.</p>
 
-				<p>OA STEM strives to offer students the chance to learn more about and get hands-on experience in the STEM fields, be it by engineering robots, studying targeted sciences, or drilling lateral-thinking mathematics problems - all with the ultimate goal of representing OA well at STEM-based competitions, as well as the marketing to make all of that possible.</p>
-			</div>
+			<p>OA STEM strives to offer students the chance to learn more about and get hands-on experience in the STEM fields, be it by engineering robots, studying targeted sciences, or drilling lateral-thinking mathematics problems - all with the ultimate goal of representing OA well at STEM-based competitions, as well as the marketing to make all of that possible.</p>
+		</div>
+		
+		<div class="one column post">
+			<h1><span>Departments</span></h1>
+			<a name="science"></a>
+			<h2>Science</h2>
+			<p>Science is a department in STEM that involves many different topics, from standard science classes like biology, physics, and chemistry, to subjects outside the curriculum, like geology and astronomy. Do not be discouraged by the topics which you are unfamiliar with. Oxford received 7th place in Forensics in the Science Olympiad, one of the highly competitive events we attend. The subjects that students learn apply the math concepts from the Mathematics department, as well as provide a basis for both the Technology and Engineering Departments. The Science department even includes information in careers such as chemical and biomedical engineering, which is not taught in the Engineering Department.</p>
+			<p>Students of the Science Department attend two main competitions during the school year: Science Olympiad and Science Bowl. While students can attend both, only a maximum of 15 people can attend the Science Olympiad and 5 to the Science Bowl, so both are highly competitive. In the Science Olympiad, students are tested on their knowledge of a certain subtopic of genre in pairs and ranked against other schools, usually by test or demonstration. In contrast, the Science Bowl tests the general knowledge of science through a team-based Jeopardy-style competition through which students can win prizes.</p>
+			<p>The Science Department spends a majority of the year preparing for these competitions, but that does not deter from the fun during the rest of the year. This includes scientific demonstrations in meetings, member-vs-member competitions, and the never-ending opportunity to learn more about how the world works.</p>
+			<p class="text-right"><em>Celine Veys</em></p>
+			
+			<a name="technology"></a>
+			<h2>Technology</h2>
+			<p>The technology department focuses on programming in Java, computer networking, and state-based computing with robots. In recent years, our department received 1st and 5th place in the Troy Coding Competition along with 3rd and 4th place in Cal State LA's Progfest programming challenge. As our team expands, we are aim to compete in more events, and gain a thorough background on computing.</p>
+			<p>One of our main projects is working with engineering in the First Robotics Competition, a worldwide robotics challenge. It's a big dedication in which the technology department strives to program the entirety of the robot-everything from being able to turn to autonomous operation. Our highly certified instructors from NASA and Boeing will go over state-based programming throughout the year, and it is an incredible experience to work with these mentors while learning new ways of coding.</p>
+			<p>Recently, we've been looking forward to competing in many other well-known competitions, such as Code Wars-sponsored by HP, Code Jam-initiated by Google, the USA Computing Olympiad, and many other prominent programming challenges. Our technology department will not only be able to experience programming with a time limit, but also connect with other students interested in the field. Of course, we are aiming to place high in these challenges as well.</p>
+			<p>Our sessions welcome any student interested in computer science. No prior experience is required, and we will have separate courses for novice and advanced students. Java will be one of the main languages we'll be targeting, stretching as far as coding for the Android platform.</p>
+			<p class="text-right"><em>Joy Hsu</em></p>
+		
+			<a name="engineering"></a>
+			<h2>Engineering</h2>
+			<p>In Engineering, we design and build robotic systems to implement them in exciting competitions. We compete in two main competitions, First Robotics Competition (FRC) and VEX Robotics Competition. In the past we have fared well in these events, but we are hoping to do even better in the future. On top of that, our department gets the privilege of working side by side with engineers from NASA and other exciting people who have applied their knowledge of engineering in real world applications.</p>
+			<p>You may think that this is dorky and boring, but have you ever used a power tool or any tool for that matter before? We don't just design robots, we build them using tools and materials. That's probably something you don't see every day. Our mentors and our senior members will be teaching you the basics of how to manage parts and tools to create a robot. We use pieces that we have to cut, drill holes in, and put together ourselves. We aren't just a bunch of "nerds" trying to make a robot, we are a team working to design a competitive and functional machine.</p>
+			<p>FRC is our main competition, which we prepare almost all year for. We compete against the top teams in Southern California as well as some teams from other places around the world. Anyone can be part of this, you don't need to be a straight 'A' student, or a know-it-all. We welcome all students to join our department and to be part of our team.</p>
+			<p>"Engineering stimulates the mind. Kids get bored easily. They have got to get out and get their hands dirty: make things, dismantle things, fix things. When the schools can offer that, you'll have an engineer for life." - Bruce Dickinson</p>
+			<p class="text-right"><em>Byron Aguilar</em></p>
+		
+			<a name="math"></a>
+			<h2>Mathematics</h2>
+			<p>The Mathematics Department at Oxford Academy STEM specializes in math that is, although similar in concept, different from that taught in school math courses-think a lot more geometry and lists than trigonometry and calculus. For this reason, none of Oxford Academy's math courses are prerequisites for understanding Mathematics Department lessons, though some knowledge of trigonometry and statistics will certainly help. Mathematics Department meetings will involve senior members teaching everyone about topics not usually found in math classes like combinations and circular geometry.</p>
+			<p>Problem-solving and logic puzzles are emphasized to help students become more active thinkers as a whole. Our department participates in a variety of competitions, ranging from the local level, including competitions like Math Day at the Beach and Pepperdine Math Day, to the national level, with tests and tournaments like the American Math Competition (AMC) and even the American Invitational Mathematics Examination (AIME), an exam given to the highest of performers. Though our primary focus is preparing students for these competitions, we additionally teach topics to further increase our students' capacity for critical thinking as well as encourage them do dig deeper in the field of math and explore the wide variety of disciplines in which math can be applied.</p>
+			<p class="text-right"><em>Duckhwan Hong</em><p>
 		</div>
 	</div>
-	
-	<div id="footer">
-		<ul id="nav">
-			<li><a href="contact.html">Contact</a></li>
-			<li><a href="about.html">About</a></li>
-		</ul>
-
-		<div class="right">
-			&copy; 2012
-		</div>
-
-		<div style="clear:both"></div>
-	</div>
-</div>
-</body>
-</html>
+<?php
+$templ->render('footer');
+?>

@@ -82,7 +82,7 @@
 						$(items[next]).css("top", "-" + height + "px");
 					} else if (next == 0) {
 						//console.log("next == 0");
-						$(items[next]).css("top", "auto");
+						$(items[next]).css("top", "0px");
 					}
 					$(itemsSpan[next]).slideDown(timeOut/10);
 					$(current).removeClass("current").addClass("hidden");
