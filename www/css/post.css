@@ -1,0 +1,130 @@
+#cat{
+	list-style:none;
+	display:block;
+	clear:right;
+}
+
+.container{
+	width:15.625em;
+	height:4.375em;
+	margin:1.25em;
+	display:inline-block;
+	text-align:center;
+	position:relative;
+}
+
+.container h2{
+	display:inline;
+	color:white;
+	vertical-align:middle;
+	line-height:3em;
+}
+
+.container img{
+	vertical-align:middle;
+	margin:0.625em;
+	float:left;
+}
+
+#sci{
+	background-color:#34cd34;
+}
+#tech{
+	background-color:#729dd9;
+}
+#eng{
+	background-color:#f75111;
+}
+#math{
+	background-color:#f1b216;
+}
+
+#sci.sel{
+	background-color:#1c7b1c;
+}
+#tech.sel{
+	background-color:#3d5589;
+}
+#eng.sel{
+	background-color:#c82b09;
+}
+#math.sel{
+	background-color:#b4640c;
+}
+
+#new-post{
+	background-color:#9377d8;
+	clear:right;
+}
+#logout, #login{
+	background-color:#FF8C00;
+}
+
+
+.hidden{
+	display:none !important;
+}
+
+#cat-head{
+	display:inline;
+	float:left;
+}
+
+#controls{
+	float:right;
+	display:inline;
+}
+
+.post-wrapper{
+	width:25em;
+	margin:1.25em;
+	display:inline-block;
+}
+
+.post-header{
+	height:4.375em;
+	width:25em;
+	margin-bottom:0;
+	float:left;
+}
+
+.category, .edit-button{
+	color:white;
+	display:inline-block;
+	float:left;
+	margin:0.625em;
+}
+
+.timestamp, .delete-button{
+	color:white;
+	display:inline-block;
+	float:right;
+	margin:0.625em;
+}
+
+.title{
+	text-align:center;
+	clear:both;
+	margin:0.625em;
+}
+
+.content-wrapper{
+	margin-top:0;
+	height:18.75em;
+	width:25em;
+	background-color:white;
+	float:left;
+}
+
+.content{
+	margin:0.625em;
+}
+
+.form-element{
+	width:44em;
+	display:block;
+}
+
+pre{
+	font-family:inherit;
+}
