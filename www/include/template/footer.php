@@ -5,7 +5,7 @@
 		</ul>
 
 		<div class="right">
-			&copy; 2012-2014
+			&copy; 2012-2015
 		</div>
 
 		<div style="clear:both"></div>
