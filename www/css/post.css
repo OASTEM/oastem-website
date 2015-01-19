@@ -70,11 +70,26 @@
 
 .sel{
 	background-color:#EEE !important;
-	border:solid 1px black;
 }
 
 .sel h2{
 	color:black;
+}
+
+#sci.sel{
+	border:1px solid #34cd34;
+}
+
+#tech.sel{
+	border:1px solid #729dd9;
+}
+
+#eng.sel{
+	border:1px solid #f75111;
+}
+
+#math.sel{
+	border:1px solid #f1b216;
 }
 
 #new-post{
