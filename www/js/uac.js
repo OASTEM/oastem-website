@@ -17,7 +17,7 @@ $(document).ready(function(e) {
 						},
 						success:function(response){
 							if(response == 'success'){
-								location.reload(true);
+								window.location = "/"
 							}else{
 								$('#ipass').val("");
 								$('#msg').text("Login failed.");
@@ -40,7 +40,7 @@ $(document).ready(function(e) {
 	});
 	
 	$('#login').click(function(){
-		$('#login-dialog').load('/login.php');
+		$('#login-dialog').load('/login_form.php');
 		loginDialog.dialog("open");
 	});
 	

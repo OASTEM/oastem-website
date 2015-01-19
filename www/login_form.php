@@ -15,5 +15,7 @@
     
     </form>
 <?php
+	}else{
+		echo 'Already logged in.';
 	}
 ?>

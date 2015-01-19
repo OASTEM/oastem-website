@@ -5,36 +5,39 @@ var newPost;
 var editDialog;
 var width;
 
-var sci = false;
-var tech = false;
-var eng = false;
-var math = false;
+var sci = true;
+var tech = true;
+var eng = true;
+var math = true;
 
 function refreshFilters(){
-	
-	if(!sci && !tech && !eng && !math){
-		$('.post-wrapper').removeClass('hidden');
+	if(sci){
+		$('[data-cid=2]').removeClass('hidden');
+		$('#sci img').attr('src','images/Atom.svg');
 	}else{
-		if(sci){
-			$('[data-cid=2]').removeClass('hidden');
-		}else{
-			$('[data-cid=2]').addClass('hidden');
-		}
-		if(tech){
-			$('[data-cid=3]').removeClass('hidden');
-		}else{
-			$('[data-cid=3]').addClass('hidden');
-		}
-		if(eng){
-			$('[data-cid=4]').removeClass('hidden');
-		}else{
-			$('[data-cid=4]').addClass('hidden');
-		}
-		if(math){
-			$('[data-cid=5]').removeClass('hidden');
-		}else{
-			$('[data-cid=5]').addClass('hidden');
-		}
+		$('[data-cid=2]').addClass('hidden');
+		$('#sci img').attr('src','images/Green-Atom.svg');
+	}
+	if(tech){
+		$('[data-cid=3]').removeClass('hidden');
+		$('#tech img').attr('src','images/Pointer.svg');
+	}else{
+		$('[data-cid=3]').addClass('hidden');
+		$('#tech img').attr('src','images/Blue-Pointer.svg');
+	}
+	if(eng){
+		$('[data-cid=4]').removeClass('hidden');
+		$('#eng img').attr('src','images/Gear.svg');
+	}else{
+		$('[data-cid=4]').addClass('hidden');
+		$('#eng img').attr('src','images/Orange-Gear.svg');
+	}
+	if(math){
+		$('[data-cid=5]').removeClass('hidden');
+		$('#math img').attr('src','images/Pi.svg');
+	}else{
+		$('[data-cid=5]').addClass('hidden');
+		$('#math img').attr('src','images/Yellow-Pi.svg');
 	}
 }
 
@@ -109,7 +112,7 @@ $(function() {
 	newDialog = $("#dialog-new").dialog({
 		title:"New Post",
 		autoOpen: false,
-		width: 600,
+		width: 650,
 		position:{my:'top',at:'top+50'},
 		resizable:false,
 		draggable:false,
@@ -155,7 +158,7 @@ $(function() {
 	editDialog = $("#dialog-edit").dialog({
 		title:"Edit Post",
 		autoOpen: false,
-		width: 600,
+		width: 650,
 		position:{my:'top',at:'top+50'},
 		resizable:false,
 		draggable:false,

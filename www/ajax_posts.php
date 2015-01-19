@@ -108,7 +108,7 @@
 					<div class='post-header' style='background-color:" . $cat['color1'] . "'>";
 				if($logged_in && ($row['uid'] == $_SESSION['uid'] || $_SESSION['sa'] == 1)){ //check permissions
 					echo "
-						<h2 class='edit-button'>Edit</h2> 
+						<h2 class='edit-button'>Edit></h2> 
 						<h2 class='delete-button'>X</h2>
 					";
 				}else{

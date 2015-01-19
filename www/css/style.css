@@ -5,7 +5,6 @@
     License: none (public domain)
 */
 
-/* your reset be messing with news feed m8
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -26,7 +25,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-*/
+
 
 strong, b { font-weight: bold; }
 /* HTML5 display-role reset for older browsers */
@@ -579,7 +578,6 @@ em {
 }
 
 
-/**reser be messing with me
 body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote {
 	margin: 0; padding: 0; border: 0;
 }
