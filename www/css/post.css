@@ -1,12 +1,13 @@
 #nfd-wrapper{
-	width:90%;
+	width:99%;
 	margin:0 auto;
+	text-align:center;
 }
 
 #cat{
 	list-style:none;
 	display:block;
-	clear:right;
+	clear:both;
 	margin:0 auto;
 }
 
@@ -111,21 +112,23 @@
 	height:4.375em;
 	width:25em;
 	margin-bottom:0;
-	float:left;
+	display:block;
+	padding: 0.9375em 0;
 }
 
 .category, .edit-button{
 	color:white;
-	display:inline;
-	float:left;
+	display:inline-block;
+	width:35%
 	margin:0.625em;
 }
 
 .timestamp, .delete-button{
 	color:white;
-	display:inline;
-	float:right;
+	display:inline-block;
+	width:50%;
 	margin:0.625em;
+	text-align:right;
 }
 
 .title{
@@ -144,6 +147,7 @@
 
 .content{
 	margin:0.625em;
+	text-align:left;
 }
 
 .form-element{
@@ -155,7 +159,7 @@ pre{
 	font-family:inherit;
 }
 
-
+#nfd-wrapper h1				{font-size: 2em; margin: .67em 0}
 #nfd-wrapper h2              { font-size: 1.5em; }
 #nfd-wrapper h3              { font-size: 1.17em; margin: .83em 0 }
 #nfd-wrapper h4				{ margin: 1.12em 0 }
