@@ -46,9 +46,7 @@ $templ->render('header');
 					<p>Open source Operating System, used in database and server management.</p></span></li>
 		</ul>
 	</div>
-
-    <div id="login-dialog"></div>
-        
+    <div id="nfd-wrapper">        
     <?php
         if($logged_in){
     ?>
@@ -86,14 +84,6 @@ $templ->render('header');
               <h2>Logout</h2>
             </div>
             <?php
-            }else{
-            ?>
-            <div id="login" class="container">
-                <img src="images/lock.svg" height="37px">
-              <h2>Login</h2>
-            </div>
-        
-            <?php
             }
             ?>
         </div>
@@ -120,6 +110,7 @@ $templ->render('header');
             </li>
         </ul>
         <div id="feed-wrapper">
+        </div>
         </div>
 
 
