@@ -4,8 +4,15 @@
 <title><?php print Template::getInstance()->getVar('header', 'title'); ?> &raquo; OA STEM</title>
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery-ui.js"></script>
+<script src="/js/jquery.form.js"></script>
+<script src="/js/jquery.timeago.js"></script>
+
 <script type="text/javascript" src="/js/s3Slider.js"></script>
 <script type="text/javascript" src="/js/global.js"></script>
+
+<script src="/js/uac.js"></script>
+<script src="../../js/posts.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function() {
 	<?php print Template::getInstance()->getVar('header', 'jsLoad'); ?>
@@ -22,6 +29,7 @@ $(document).ready(function() {
 <?php print Template::getInstance()->getVar('header', 'head'); ?>
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="StyleSheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/post.css" />
 <link rel="StyleSheet" href="/js/jquery-ui/redmond/jquery-ui-1.8.23.custom.css" />
 </head>
 <body>
