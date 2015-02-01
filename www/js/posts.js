@@ -3,12 +3,34 @@ var editSucc = false;
 var newSucc = false;
 var newPost;
 var editDialog;
+
 var width;
 
 var sci = true;
 var tech = true;
 var eng = true;
 var math = true;
+
+var fetchingMore = false;
+var scrollCt = 0;
+
+setInterval(function(){
+		var totalHeight, currentScroll, visibleHeight;
+		if (document.documentElement.scrollTop){
+			currentScroll = document.documentElement.scrollTop;
+		}else{
+			currentScroll = document.body.scrollTop;
+		}
+		
+		totalHeight = document.body.offsetHeight;
+		visibleHeight = document.documentElement.clientHeight;
+		 
+		if (totalHeight <= currentScroll + visibleHeight ){
+			loadMore();
+		}
+	}
+, 100);
+
 
 function refreshFilters(){
 	if(sci){
@@ -49,8 +71,33 @@ function reloadp(){
 		success:function(response){
 			$('#feed-wrapper').html(response);
 			initDynamicElements();
+			scrollCt = 25;
 		}
 	});
+}
+
+function loadMore(){
+	if(scrollCt != -1 || fetchingMore){
+		fetchingMore = true;
+		$.ajax({
+			url:'/ajax_posts.php?get',
+			data:{
+				'lim':scrollCt
+			},
+			dataType:'html',
+			type:"POST",
+			success:function(response){
+				if(response == "No more."){
+					scrollCt = -1;
+				}else{
+					$('#feed-wrapper').append(response);
+					initDynamicElements();
+					scrollCt += 25;
+				}
+				fetchingMore = false;
+			}
+		})
+	}
 }
 
 function initDynamicElements(){
@@ -127,6 +174,7 @@ $(function() {
 								reloadp();
 								newSucc = true;
 								newDialog.dialog("close");
+								$("#new-post-form").find("input,textarea").val("");
 							}else{
 								alert("There was an error processing your request.");
 							}

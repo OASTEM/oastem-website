@@ -1,14 +1,14 @@
+<?php
+if(isset($_COOKIE['nfd_sid'])){
+	header("Location: http://". $_SERVER['SERVER_NAME']);
+}
+?>
+
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Login</title>
-
-<script>
-if(document.cookie.indexOf('nfd_sid') > -1){
-	window.location = "/";
-}
-</script>
 
 <script src="../js/jquery.js"></script>
 <script src="../js/jquery-ui.js"></script>
