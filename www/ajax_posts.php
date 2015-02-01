@@ -77,10 +77,19 @@
 			} else echo 'bad data';
 		}else echo 'not logged in';
 	}elseif(isset($_GET['get'])){
-		$sql = "SELECT * FROM (
-			SELECT * FROM posts WHERE deleted = 0 ORDER BY pid DESC LIMIT 25
-		) sub
-		ORDER BY pid DESC";
+		$sql = "";
+		if(isset($_POST['lim'])){
+			$lim = $_POST['lim'];
+			$sql = "SELECT * FROM (
+				SELECT * FROM posts WHERE deleted = 0 ORDER BY pid DESC LIMIT $lim, 25
+			) sub
+			ORDER BY pid DESC";
+		}else{
+			$sql = "SELECT * FROM (
+				SELECT * FROM posts WHERE deleted = 0 ORDER BY pid DESC LIMIT 25
+			) sub
+			ORDER BY pid DESC";
+		}
 		
 		listPosts($sql,$db);
 		
@@ -96,7 +105,7 @@
 		$result = $db->query($sql);
 			
 		if($result->num_rows < 1){ //make sure there are actual results
-			echo 'No posts found.';
+			echo 'No more.';
 		}else{
 			while($row = $result->fetch_assoc()){ //for each result from db
 				$op = getData($row['uid'],$db);
