@@ -1,3 +1,4 @@
+
 var editPid = 0;
 var editSucc = false;
 var newSucc = false;
@@ -11,28 +12,24 @@ var tech = true;
 var eng = true;
 var math = true;
 
+var init = true;
+
 var fetchingMore = false;
 var scrollCt = 0;
 
-setInterval(function(){
-		var totalHeight, currentScroll, visibleHeight;
-		if (document.documentElement.scrollTop){
-			currentScroll = document.documentElement.scrollTop;
-		}else{
-			currentScroll = document.body.scrollTop;
-		}
-		
-		totalHeight = document.body.offsetHeight;
-		visibleHeight = document.documentElement.clientHeight;
-		 
-		if (totalHeight <= currentScroll + visibleHeight ){
-			loadMore();
-		}
-	}
-, 100);
-
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+      loadMore();
+   }
+});
 
 function refreshFilters(){
+	if(init){
+		sci = !sci;
+		tech = !tech;
+		eng = !eng;
+		math = !math;
+	}
 	if(sci){
 		$('[data-cid=2]').removeClass('hidden');
 		$('#sci img').attr('src','images/Atom.svg');
@@ -71,14 +68,15 @@ function reloadp(){
 		success:function(response){
 			$('#feed-wrapper').html(response);
 			initDynamicElements();
-			scrollCt = 25;
+			scrollCt = 24;
 		}
 	});
 }
 
 function loadMore(){
-	if(scrollCt != -1 || fetchingMore){
+	if(scrollCt != -1 && !fetchingMore){
 		fetchingMore = true;
+		$('#loading').css('display','block');
 		$.ajax({
 			url:'/ajax_posts.php?get',
 			data:{
@@ -92,8 +90,9 @@ function loadMore(){
 				}else{
 					$('#feed-wrapper').append(response);
 					initDynamicElements();
-					scrollCt += 25;
+					scrollCt += 24;
 				}
+				$('#loading').css('visibility','hidden');
 				fetchingMore = false;
 			}
 		})
@@ -137,6 +136,7 @@ function initDynamicElements(){
 	});
 	
 	$('time.post-time').timeago();
+	$('#loading').css('visibility','hidden');
 }
 
 function recursiveUnbind(jElement) {
@@ -174,7 +174,6 @@ $(function() {
 								reloadp();
 								newSucc = true;
 								newDialog.dialog("close");
-								$("#new-post-form").find("input,textarea").val("");
 							}else{
 								alert("There was an error processing your request.");
 							}
@@ -192,9 +191,11 @@ $(function() {
 			beforeClose:function(e){
 				if(newSucc){
 					newSucc = false;
+					$("#new-post-form").find("input,textarea").val("");
 				}else{
 					if(confirm('Continuing will discard changes.')){
 						newSucc = false;
+						$("#new-post-form").find("input,textarea").val("");
 					}else{
 						return false;
 					}

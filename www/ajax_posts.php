@@ -81,12 +81,12 @@
 		if(isset($_POST['lim'])){
 			$lim = $_POST['lim'];
 			$sql = "SELECT * FROM (
-				SELECT * FROM posts WHERE deleted = 0 ORDER BY pid DESC LIMIT $lim, 25
+				SELECT * FROM posts WHERE deleted = 0 ORDER BY pid DESC LIMIT $lim, 24
 			) sub
 			ORDER BY pid DESC";
 		}else{
 			$sql = "SELECT * FROM (
-				SELECT * FROM posts WHERE deleted = 0 ORDER BY pid DESC LIMIT 25
+				SELECT * FROM posts WHERE deleted = 0 ORDER BY pid DESC LIMIT 24
 			) sub
 			ORDER BY pid DESC";
 		}
@@ -116,10 +116,8 @@
 				<div id='post" . $row['pid'] . "' class='post-wrapper' data-pid='" . $row['pid'] . "' data-cid='" . $op['cid'] . "'>
 					<div class='post-header' style='background-color:" . $cat['color1'] . "'>";
 				if($logged_in && ($row['uid'] == $_SESSION['uid'] || $_SESSION['sa'] == 1)){ //check permissions
-					echo "
-						<h2 class='edit-button'>Edit></h2> 
-						<h2 class='delete-button'>X</h2>
-					";
+					echo "<h2 class='edit-button'>Edit</h2> 
+						<p class='delete-button'>X</h2>";
 				}else{
 						echo"
 							<h2 class='category'>" . $cat['name'] . "</h2>
