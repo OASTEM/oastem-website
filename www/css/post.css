@@ -1,7 +1,6 @@
 #nfd-wrapper{
 	width:1005px;
 	margin:1em auto;
-	text-align:center;
 }
 
 #cat{
@@ -9,6 +8,7 @@
 	display:block;
 	clear:both;
 	margin:0 auto;
+	text-align:center;
 }
 
 .container{
@@ -100,7 +100,6 @@
 	background-color:#FF8C00;
 }
 
-
 .hidden{
 	display:none !important;
 }
@@ -121,6 +120,7 @@
 	width:25em;
 	margin:1.25em;
 	display:inline-block;
+	text-align:center;
 }
 
 .post-header{
@@ -172,6 +172,10 @@
 
 pre{
 	font-family:inherit;
+}
+
+#loading{
+	margin:auto;
 }
 
 #nfd-wrapper h1				{font-size: 2em; margin: .67em 0}

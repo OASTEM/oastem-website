@@ -1,4 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,300italic,300,600,600italic,700italic);
+/*@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,300italic,300,600,600italic,700italic);*/
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -63,7 +64,7 @@ table {
 
 body {
 	background: #EEE /*url(../images/back2.png)*/;
-	font-family: "Tahoma", sans-serif;
+	font-family: "Noto Sans", sans-serif;
 	font-size: 12px;
 }
 
@@ -101,15 +102,15 @@ div#content.nomargin {
 }
 
 header {
-	height: 180px;
-	background: #222 /*url(../images/head-2.png)*/;
+	height: 60px;
+	background: #222222 /*url(../images/head-2.png)*/;
 }
 
 headerInner {
-	height: 180px;
+	height: 60px;
 	/*background: url(../images/headHighlight.png) 50% 50% no-repeat;*/
 }
-
+/*
 header h1 {
 	background: url(../images/logo.png) 50% 50% no-repeat;
 	width: 1000px;
@@ -119,7 +120,7 @@ header h1 {
 
 header h1 span {
 	display: none;
-}
+}*/
 
 div#shadow {
 	height: 9px;
@@ -128,17 +129,17 @@ div#shadow {
 	position: relative;
 	z-index: 100;
 }
-
+/*
 nav {
 	background: #111;
 	height: 30px;
-}
+}*/
 
 ul#navmain {
 	width: 1000px;
 	list-style-type: none;
 	margin: 0 auto;
-	padding: 8px 0;
+	padding: 4px 0;
 	text-align: center;
 }
 
@@ -147,15 +148,30 @@ ul#navmain li {
 	text-transform: lowercase;
 }
 
-ul#navmain li a {
+ul#navmain > li > a {
 	color: #DDD;
-	padding: 8px 1em;
+	padding: 20px 1em;
 	text-decoration: none;
+	font-size:20px;
 }
 
 ul#navmain li a:hover {
-	background: #222;
-	border: 0;
+	/*background: #222;
+	border: 0;*/ 
+	text-decoration:underline;
+	color:#EEB346;
+}
+ul.sub{
+	z-index:999;
+	height:30px;
+}
+
+#logo img{
+	vertical-align:middle;
+	height:50px;
+	line-height:50px;
+	padding:5px 0;
+	
 }
 
 hr {
@@ -240,7 +256,7 @@ footer ul#nav li a {
 }
 
 footer ul#nav li a:hover {
-	color: #333;
+	color: #222;
 	border-bottom: 1px dotted #777;
 }
 
@@ -378,7 +394,7 @@ table th, table td {
 }
 
 table th {
-	font-family: "Titillium Web", sans-serif;
+	font-family: "Noto Sans", sans-serif;
 	font-size: 120%;
 	font-weight: bold;
 }
@@ -429,7 +445,7 @@ div.post.singular {
 
 div.post h1 {
 	width: 100%;
-	font-family: "Titillium Web", sans-serif;
+	font-family: "Noto Sans", sans-serif;
 	font-weight: bold;
 	font-size: 30px;
 	margin: 0.25em 0 0.5em 0;
@@ -440,7 +456,7 @@ div.post h1 a:hover {
 }
 
 div.post h2 {
-	font-family: "Titillium Web", sans-serif;
+	font-family: "Noto Sans", sans-serif;
 	font-weight: bold;
 	font-size: 20px;
 	margin: 0.25em 0 0.5em 0;
@@ -479,7 +495,7 @@ div#comments-meta {
 div#comments input, div#comments textarea {
 	border-radius: 5px;
 	background: #E8E8E8;
-	font-family: Tahoma, sans-serif;
+	font-family: "Noto Sans", sans-serif;
 	border: 1px solid #777;
 	padding: 3px;
 }
@@ -594,7 +610,7 @@ nav ul li:hover > ul {
 nav ul{
 	background-color:transparent;
 	list-style:none;
-	font-family:"Tahoma", sans-serif;
+	font-family:"Noto Sans", sans-serif;
 	margin-top:2px;
 	margin-left:37%;
 	
@@ -616,11 +632,6 @@ nav ul li:hover{
 	/* background-color:#333333; */
 }
 
-nav ul li:hover a{
-	color: #fff;
-	text-decoration:underline;
-}
-
 nav ul li a {
 	/* display: block; */
 	padding: 5px;
@@ -629,28 +640,24 @@ nav ul li a {
 }
 
 nav ul ul {
-	background-color:#333333;
+	background-color:#222;
 	border-radius: 0px;
 	padding: 0;
 	position: absolute;
 	top: 100%;
-	left:-50px;
+	left:-300px;
 }
 
 nav ul ul li{
 	float: none;
-	border-top: 1px solid #ffffff;
-	border-bottom: 1px solid #ffffff;
 	position:relative;
 }
 
 nav ul ul li a{
-	padding: 5px;
+	padding: 5px 8px;
 	color: #fff;
-}
-
-nav ul ul li a:hover{
-	background-color:#333333;
+	line-height:20px;
+	font-size:16px;
 }
 
 nav ul ul ul{
@@ -737,3 +744,15 @@ table#contact textarea {
 		width: 100%;
 	}
 }*/
+
+#board{
+	background-color:#dddddd;
+}
+
+#mentors{
+	background-color:#4a3e3d;
+}
+
+.team-member p{
+	visibility:hidden;
+}
