@@ -71,6 +71,9 @@
 .sel{
 	background-color:#EEE !important;
 }
+.sel:hover{
+	background-color:#CCC !important;
+}
 
 .sel h2{
 	color:black;

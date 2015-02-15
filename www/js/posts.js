@@ -23,40 +23,57 @@ $(window).scroll(function() {
    }
 });
 
+function four(){
+	return sci && tech && eng && math;
+}
+
 function refreshFilters(){
-	if(init){
-		sci = !sci;
-		tech = !tech;
-		eng = !eng;
-		math = !math;
-	}
+	checkInit();
 	if(sci){
 		$('[data-cid=2]').removeClass('hidden');
 		$('#sci img').attr('src','images/Atom.svg');
+		$('#sci').removeClass('sel');
 	}else{
 		$('[data-cid=2]').addClass('hidden');
 		$('#sci img').attr('src','images/Green-Atom.svg');
+		$('#sci').addClass('sel');
 	}
 	if(tech){
 		$('[data-cid=3]').removeClass('hidden');
 		$('#tech img').attr('src','images/Pointer.svg');
+		$('#tech').removeClass('sel');
 	}else{
 		$('[data-cid=3]').addClass('hidden');
 		$('#tech img').attr('src','images/Blue-Pointer.svg');
+		$('#tech').addClass('sel');
 	}
 	if(eng){
 		$('[data-cid=4]').removeClass('hidden');
 		$('#eng img').attr('src','images/Gear.svg');
+		$('#eng').removeClass('sel');
 	}else{
 		$('[data-cid=4]').addClass('hidden');
 		$('#eng img').attr('src','images/Orange-Gear.svg');
+		$('#eng').addClass('sel');
 	}
 	if(math){
 		$('[data-cid=5]').removeClass('hidden');
 		$('#math img').attr('src','images/Pi.svg');
+		$('#math').removeClass('sel');
 	}else{
 		$('[data-cid=5]').addClass('hidden');
 		$('#math img').attr('src','images/Yellow-Pi.svg');
+		$('#math').addClass('sel');
+	}
+}
+
+function checkInit(){
+	if(init && !fetchingMore){
+		sci = !sci;
+		tech = !tech;
+		eng = !eng;
+		math = !math;
+		init = false;
 	}
 }
 
@@ -76,7 +93,8 @@ function reloadp(){
 function loadMore(){
 	if(scrollCt != -1 && !fetchingMore){
 		fetchingMore = true;
-		$('#loading').css('display','block');
+		$('#loading').css('visibility','visible');
+		//setTimeout(function(){
 		$.ajax({
 			url:'/ajax_posts.php?get',
 			data:{
@@ -87,15 +105,18 @@ function loadMore(){
 			success:function(response){
 				if(response == "No more."){
 					scrollCt = -1;
+					$('#loading').css('visibility','hidden');
 				}else{
 					$('#feed-wrapper').append(response);
 					initDynamicElements();
+					refreshFilters();
 					scrollCt += 24;
 				}
 				$('#loading').css('visibility','hidden');
 				fetchingMore = false;
 			}
-		})
+		});
+		//},10000);
 	}
 }
 
@@ -257,22 +278,22 @@ $(function() {
 	});
 	
 	$('#sci').click(function(){
-		$(this).toggleClass('sel');
+		init = four();
 		sci = !sci;
 		refreshFilters();
 	});
 	$('#tech').click(function(){
-		$(this).toggleClass('sel');
+		init = four();
 		tech = !tech;
 		refreshFilters();
 	});
 	$('#eng').click(function(){
-		$(this).toggleClass('sel');
+		init = four();
 		eng = !eng;
 		refreshFilters();
 	});
 	$('#math').click(function(){
-		$(this).toggleClass('sel');
+		init = four();
 		math = !math;
 		refreshFilters();
 	});
