@@ -5,6 +5,7 @@ $templ->setTitle('Team');
 $templ->render('header');
 ?>
 <script>
+$(document).ready(function(e) {
 	$('.team-member figure').hover(
 	function(){
 		$(this).parent().find('p').css('visibility','visible');
@@ -12,6 +13,7 @@ $templ->render('header');
 	function(){
 		$(this).parent().find('p').css('visibility','hidden');
 	});
+});
 </script>
 <div id="content">
 <div id="board">
@@ -40,7 +42,7 @@ $templ->render('header');
         <p>She helps our school become exposed to competitions such as Science Olympiad and Science Bowl.</p>
     </div>
     <div id="head" class="three column post text-center team-member">
-    	<img src="images/MeetTheBoard.svg" height="300px">
+    	<img src="images/MeetTheBoard.svg" width="300px">
     </div>
 	<div id="tech" class="three column post text-center team-member">
     	<figure><img src="images/team/Joy.jpg" width="250"></figure>
@@ -89,7 +91,7 @@ $templ->render('header');
         <p>As an electrical engineer, he works with satellites at Boeing and comes to share his knowledge with us on weekends.</p>
     </div>
     <div id="head" class="three column post text-center team-member">
-    	<img src="images/MeetTheMentors.svg" height="300px">
+    	<img src="images/MeetTheMentors.svg" width="300px">
     </div>
 	<div id="pena" class="three column post text-center team-member">
     	<figure><img src="images/team/Pena.jpg" width="250"></figure>

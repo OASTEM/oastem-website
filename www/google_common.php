@@ -2,14 +2,11 @@
 
 $lib = "/var/ww2/google-api-php-client/src/Google/";
 
+require_once "config.php";
 require_once $lib . "Client.php";
 require_once $lib . "Service/Drive.php";
 require_once $lib . "Service/Oauth2.php";
 require_once $lib . "Auth/AssertionCredentials.php";
-
-$DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive';
-$SERVICE_ACCOUNT_EMAIL = '514116917092-ccbes9988red5kasrg5jp684cm4q98fd@developer.gserviceaccount.com';
-$SERVICE_ACCOUNT_PKCS12_FILE_PATH = '/var/ww2/OASTEM Drive Media Test-51d96c2ff500.p12';
 
 /**
  * Build and returns a Drive service object authorized with the service accounts
@@ -66,7 +63,10 @@ function printFilesInFolder($service, $folderId) {
       $children = $service->children->listChildren($folderId, $parameters);
 
       foreach ($children->getItems() as $child) {
-        print 'File Id: ' . $child->getId();
+        echo 'File Id: ' . $child->getId();
+		echo ' | Kind: ' . $child->getKind();
+		echo ' | Link: ' . $child->getSelfLink();
+		echo '<br>';
       }
       $pageToken = $children->getNextPageToken();
     } catch (Exception $e) {
