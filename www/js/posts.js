@@ -197,6 +197,8 @@ $(function() {
 								newDialog.dialog("close");
 							}else{
 								alert("There was an error processing your request.");
+								console.log('Received:');
+								console.log(response);
 							}
 						},
 					});
