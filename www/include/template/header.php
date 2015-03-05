@@ -46,7 +46,7 @@ $(document).ready(function() {
                     <li><a href="/team.html#mentors">Mentors</a></li>
                 </ul>
                 </li>
-            	<li><a href="/mtest.html">Media</a></li>
+            	<li><a href="/media">Media</a></li>
 				<li><a href="/about.html">About</a></li>
 				<li id="logo"><a href="/index.html"><img src="../../images/r10-White-OA.svg"></a></li>
 				<li><a href="/faq.html">FAQ</a></li>

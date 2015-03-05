@@ -6,6 +6,18 @@ require_once('../config.php');
 $templ->setTitle('Media');
 $templ->render('header');
 
+$lc = "Started at " . microtime();
+
+function logg($text, $start){
+	global $lc;
+	$clock = microtime(true) - $start;
+	$lc .= "\n[" . microtime() . "] $text";
+	$lc .= "\n	Took $clock";
+}
+
+$log = "/var/www/stem/google_log.txt";
+
+
 $drive = getDriveService();
 
 function startsWith($haystack, $needle) {
@@ -14,22 +26,31 @@ function startsWith($haystack, $needle) {
 }
 
 function append($folder_id,$name){
+	$ct = microtime(true);
+	
 	global $drive;
 	$files = listFileIdInFolder($drive,$folder_id);
 	$isRoot = $name == "ROOT";
+	
+	logg("Grabbed folder " . $folder_id,$ct);
+	
 	echo "<div id='" . ($isRoot ? 'media-content' : preg_replace("/[^A-Za-z0-9]/", "", $name))
 		. "' class='media-folder'>";
 		echo $isRoot ? "" : "<h1>" . $name . "</h1>"; 
 	foreach($files as $f){
+		$ct = microtime(true);
+		
 		$data = $drive->files->get($f);
+		
 		if($data->getMimeType() == 'application/vnd.google-apps.folder'){
 			append($data->getId(),$data->getTitle());
 		}
 		if(startsWith($data->getMimeType(),'image/')){
-			echo "<div class='media-image quarter column'>
-				<img width='100px' src='" .  str_replace("export=download","export=view",$data->getWebContentLink()) . "'>
+			echo "<div class='thumb quarter column' style=\"background-image:url('" . $data->getThumbnailLink() ."'\")>
 			</div>";
+			
 		}
+		logg("Processed " . $data->getId(),$ct);
 	}
 	echo "</div>";
 
@@ -50,30 +71,9 @@ function append($folder_id,$name){
 }*/
 </style>
 
-<div id="loading">
-Please wait for all the pictures to load; this may take a while for Google is slow af.
-</div>
-
-<script>
-var dialog;
-$(document).ready(function(e) {
-    dialog = $('#loading').dialog({
-		title:"Loading...",
-		autoOpen: true,
-		modal:true,
-		resizable:false,
-		draggable:true,
-		width:1000,
-		height:500});
-});
-$(window).load(function(e) {
-    dialog.dialog("close");
-	$(document).remove('#loading');
-});
-</script>
-
 <?php
 append($MEDIA_FOLDER_ID,"ROOT");
+file_put_contents($log,$lc);
 ?>
 
 <?php

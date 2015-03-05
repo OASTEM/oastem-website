@@ -4,30 +4,20 @@ require('./common.php');
 $templ->setTitle('Team');
 $templ->render('header');
 ?>
-<script>
-$(document).ready(function(e) {
-	$('.team-member figure').hover(
-	function(){
-		$(this).parent().find('p').css('visibility','visible');
-	},
-	function(){
-		$(this).parent().find('p').css('visibility','hidden');
-	});
-});
-</script>
-<div id="content">
+<div id="content-wrapper">
+<div id="board-wrap">
 <div id="board">
-	<div id="pres" class="three column post text-center team-member">
-    	<figure><img src="http://placehold.it/250&text=aayush+broke+the+camera"></figure>
-    	<h2>President</h2>
-        <h3>Aayush Patel</h3>
-        <p>The head lead of our group makes sure we have good relations with the school’s administration and pushes for our overall success.</p>
-    </div>
     <div id="vp" class="three column post text-center team-member">
     	<figure><img src="images/team/Sean.jpg" width="250"></figure>
     	<h2>Vice President</h2>
         <h3>Sean Park</h3>
         <p>He manages logistics such as money and getting us to competitions. Additionally, he keeps dates and data organized.</p>
+    </div>
+	<div id="pres" class="three column post text-center team-member">
+    	<figure><img src="images/team/Aayush.jpg"></figure>
+    	<h2>President</h2>
+        <h3>Aayush Patel</h3>
+        <p>The head lead of our group makes sure we have good relations with the school’s administration and pushes for our overall success.</p>
     </div>
 	<div id="pub" class="three column post text-center team-member">
     	<figure><img src="images/team/Peter.jpg" width="250"></figure>
@@ -65,6 +55,8 @@ $(document).ready(function(e) {
         <p>He walks students through difficult math problems so they can succeed at math competitions all around.</p>
     </div>
 </div>
+</div>
+<div id="mentors-wrap">
 <div id="mentors">
 	<div id="peralta" class="three column post text-center team-member">
     	<figure><img src="images/team/Peralta.jpg" width="250"></figure>
@@ -99,6 +91,7 @@ $(document).ready(function(e) {
         <h3>Hewlett-Packard</h3>
         <p>As a parent of a student, his knowledge from tinkering with machines and using 3D printers greatly helps our team out. </p>
     </div>
+</div>
 </div>
 </div>
 
