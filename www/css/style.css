@@ -760,7 +760,7 @@ table#contact textarea {
 }
 
 #board{
-	width:83.75em;
+	width:71.786em;
 	margin:0 auto;
 }
 
@@ -769,24 +769,54 @@ table#contact textarea {
 }
 
 #mentors{
-	width:83.75em;
+	width:71.786em;
 	margin:0 auto;
 }
 
 #mentors-wrap,#board-wrap{
-	margin-top:0.833em;
+	padding:0.714em;
+}
+
+#board-head{
+	background-image:url(../images/MeetTheBoard.svg);
+	background-position:center center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	height:17.857em;
+}
+
+#mentor-head{
+	background-image:url(../images/MeetTheMentors.svg);
+	background-position:center center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	height:17.857em;
 }
 
 .team-member p{
-	text-align:left;
-	padding:0.417em;
+	font-size:0.95em;
+	text-align:justify;
+	width:17.857em;
+	margin:0 auto;
+	line-height:1.4em;
+}
+
+#mentors p, #mentors h2, #mentors h3{
+	color:#DDD;
+}
+
+#board p, #board h2, #board h3{
+	color:#222;
+}
+
+.team-member h2, .team-member h3{
+	font-size:1.143em !important;
+	margin:5px 0;
 }
 
 .thumb {
     display: inline-block;
-    width: 15em;
-    height: 15em;
-    margin: 0.417em;
+    margin: 0.537em;
     background-position: center center;
     background-size: cover;
 }
