@@ -24,7 +24,7 @@ $(window).scroll(function() {
 });
 
 function four(){
-	return sci && tech && eng && math;
+	return sci == tech && eng == math && math == tech;
 }
 
 function refreshFilters(){
@@ -68,7 +68,7 @@ function refreshFilters(){
 }
 
 function checkInit(){
-	if(init && !fetchingMore){
+	if((four() || init) && !fetchingMore){
 		sci = !sci;
 		tech = !tech;
 		eng = !eng;
