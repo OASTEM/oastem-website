@@ -10,9 +10,7 @@ function startsWith($haystack, $needle) {
 
 if(isset($_GET['list'])){
 	$drive = getDriveService();
-	$folders = array(
-		$MEDIA_FOLDER_ID
-	);
+	$folders = array();
 	foreach(listFileIdInFolder($drive,$MEDIA_FOLDER_ID) as $item){
 		$data = $drive->files->get($item);
 		if($data->getMimeType() == 'application/vnd.google-apps.folder'){
@@ -22,6 +20,7 @@ if(isset($_GET['list'])){
 	echo json_encode($folders);
 }elseif(isset($_GET['get'])){
 	if(isset($_POST['fid'])){
+		$drive = getDriveService();
 		$fid = $_POST['fid'];
 		
 		foreach(listFileIdInFolder($drive,$fid) as $item){
