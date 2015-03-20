@@ -813,10 +813,3 @@ table#contact textarea {
 	font-size:1.143em !important;
 	margin:5px 0;
 }
-
-.thumb {
-    display: inline-block;
-    margin: 0.537em;
-    background-position: center center;
-    background-size: cover;
-}

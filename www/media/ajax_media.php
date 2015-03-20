@@ -26,7 +26,7 @@ if(isset($_GET['list'])){
 		foreach(listFileIdInFolder($drive,$fid) as $item){
 			$data = $drive->files->get($item);
 			if(startsWith($data->getMimeType(),'image/')){
-				echo "<div class='thumb quarter column' style=\"background-image:url('" . $data->getThumbnailLink() ."')\">
+				echo "<div class='m-img' style=\"background-image:url('" . $data->getThumbnailLink() ."')\">
 				</div>";
 				
 			}

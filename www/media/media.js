@@ -1,19 +1,23 @@
 var index = 0;
+var maxI = 0;
 
 var folders;
 
 function loadMediaPage(){
-	console.log(folders[index]);
+	if(index == -1){
+		index = maxI;
+	}
+	if(index > maxI){
+		index = 0;
+	}
 	$.ajax({
 		url:'ajax_media.php?get',
 		type:"POST",
 		data:{fid:folders[index]},
 		dataType:"html",
 		success: function(response){
-			console.log("Done");
 			if(response.responseText != 'error'){
 				$('#media-content').html(response);
-				console.log(response);
 			}else{
 				alert("There was an error processing your request.");
 			}
@@ -23,6 +27,21 @@ function loadMediaPage(){
 }
 
 $(document).ready(function(e) {
+	$('#prev').button({
+		icons:{primary:"ui-icon-arrowthick-1-w"}
+	});
+	$('#prev').click(function(e){
+		index--;
+		loadMediaPage();
+	});
+
+	$('#next').button({
+		icons:{primary:"ui-icon-arrowthick-1-e"}
+	});
+	$('#next').click(function(e){
+		index++;
+		loadMediaPage();
+	});
 	$.ajax({
 		url:'ajax_media.php?list',
 		type:"POST",
@@ -30,7 +49,7 @@ $(document).ready(function(e) {
 		success: function(response){
 			if(response.responseText != 'error'){
 				folders = response;
-				console.log(folders);
+				maxI = folders.length - 1;
 				loadMediaPage();
 			}else{
 				alert("There was an error processing your request.");
