@@ -1,0 +1,13 @@
+#media-content{
+	margin:0 auto;
+	width:1000px;
+}
+
+.m-img{
+	height:100px;
+	width:100px;
+	display: inline-block;
+    margin: 0.537em;
+    background-position: center center;
+    background-size: cover;
+}
