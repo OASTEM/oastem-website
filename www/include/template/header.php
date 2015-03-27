@@ -55,3 +55,10 @@ $(document).ready(function() {
 			</ul>
 		</nav>
 	</header>
+    <div id="sm-wrap">
+        <ul id="social-media">
+            <li><a href="http://facebook.com/OASTEM/" target="_blank"><img src="../../images/facebook.svg"></a></li>
+            <li><a href="http://instagram.com/oa_stem/" target="_blank"><img src="../../images/instagram.svg"></a></li>
+            <li><a href="http://github.com/OASTEM" target="_blank"><img src="../../images/github.svg"></a></li>
+        </ul>
+	</div>

@@ -25,9 +25,10 @@ if(isset($_GET['list'])){
 		
 		foreach(listFileIdInFolder($drive,$fid) as $item){
 			$data = $drive->files->get($item);
+			$con = str_replace("&export=download","",$data->getWebContentLink());
 			if(startsWith($data->getMimeType(),'image/')){
-				echo "<div class='m-img' style=\"background-image:url('" . $data->getThumbnailLink() ."')\">
-				</div>";
+				echo "<a href='$con' target='_blank'><div class='m-img' style=\"background-image:url('" . $data->getThumbnailLink() ."')\">
+				</div></a>";
 				
 			}
 		}
