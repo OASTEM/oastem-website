@@ -1,11 +1,15 @@
-#media-content{
+#media-content,#media-control{
 	margin:0 auto;
-	width:1000px;
+	width:83.333em;
+}
+
+#media-control{
+	text-align:center;
 }
 
 .m-img{
-	height:100px;
-	width:100px;
+	height:8.333em;
+	width:8.333em;
 	display: inline-block;
     margin: 0.537em;
     background-position: center center;

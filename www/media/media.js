@@ -4,6 +4,7 @@ var maxI = 0;
 var folders;
 
 function loadMediaPage(){
+	$('#loading').css('visibility','visible');
 	if(index == -1){
 		index = maxI;
 	}
@@ -18,6 +19,7 @@ function loadMediaPage(){
 		success: function(response){
 			if(response.responseText != 'error'){
 				$('#media-content').html(response);
+				$('#loading').css('visibility','hidden');
 			}else{
 				alert("There was an error processing your request.");
 			}
