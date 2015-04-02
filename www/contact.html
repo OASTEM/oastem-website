@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 		$email = str_replace(array("\r", "\n"), '', $_POST['email']);
 		$headers = 'Reply-To: ' . $email . "\r\n" .
     			'X-Mailer: PHP/' . phpversion();
-		mail("contact@oastem.org", "Message from {$_SERVER['REMOTE_ADDR']} ({$_POST['name']})", $_POST['message']."\n\n\nE-mail: {$email}", $headers);
+		mail("contact@oastem.org", "[Message from {$_POST['name']} ({$_SERVER['REMOTE_ADDR']})] {$_POST['subject']}", $_POST['message']."\n\n\nE-mail: {$email}", $headers);
 		setFlash("success", "Thank you! Your message has been sent.");
 	}
 	$_SESSION['lastMessage'] = time();
@@ -37,6 +37,9 @@ $templ->render('header');
 						<td>Name</td><td><input type="text" name="name" /></td>
 						<td>E-mail</td><td><input type="text" name="email" /></td>
 					</tr>
+                    <tr>
+                    	<td>Subject</td><td colspan="3"><input type="text" name="subject" class="sub_input" /></td>
+                    </tr>
 					<tr>
 						<td colspan="4"><textarea name="message" rows="14" cols="50"></textarea></td>
 					</tr>
