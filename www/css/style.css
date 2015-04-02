@@ -433,7 +433,7 @@ table.plain {
 }
 
 table.plain th, table.plain td {
-	padding: 0;
+	padding: 5px 0px;
 	border: none;
 }
 
@@ -724,7 +724,9 @@ input[type='submit'] {
 	letter-spacing: 0.167em;
 }
 
-
+.sub_input{
+	width: 34.2em !important;
+}
 
 table#contact textarea {
 	margin: 1em;
