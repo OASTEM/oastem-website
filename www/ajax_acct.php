@@ -6,7 +6,7 @@
 	if(isset($_GET['logout'])){
 		session_destroy();
 		unset($_COOKIE['nfd_sid']);
-		setcookie('nfd_sid','',time()-3600,'/','.phantastyc.tk');
+		setcookie('nfd_sid','',time()-3600,'/','.oastem.org');
 		echo 'success';
 	}elseif(isset($_GET['new'])){
 		if($_SESSION['sa'] == 1){
@@ -46,9 +46,9 @@
 				session_start();
 				
 				if(isset($_POST['remember'])){
-					setcookie('nfd_sid',session_id(),time()+3600 * 24 * 30,'/','.phantastyc.tk');
+					setcookie('nfd_sid',session_id(),time()+3600 * 24 * 30,'/','.oastem.org');
 				}else{
-					setcookie('nfd_sid',session_id(),0,'/','.phantastyc.tk');
+					setcookie('nfd_sid',session_id(),0,'/','.oastem.org');
 				}
 				
 				$_SESSION['uid'] = $data['uid'];

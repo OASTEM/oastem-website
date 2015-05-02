@@ -9,6 +9,9 @@ $templ->setTitle('Home');
 $templ->setVar('header', 'jsLoad', '$(\'div#slideshow\').s3Slider({timeOut: 4000});');
 $templ->render('header');
 ?>
+<link rel="stylesheet" href="/css/post.css" />
+<script src="/js/uac.js"></script>
+<script src="../../js/posts.js"></script>
 	<div id="slideshow">
 		<ul id="slideshowContent">
 			<li class="slideshowImage">
@@ -111,6 +114,8 @@ $templ->render('header');
         </ul>
         <div id="feed-wrapper">
         </div>
+        <div id="load-wrap">
+        	<img id="loading" src="images/ajax-loader.gif">
         </div>
 
 

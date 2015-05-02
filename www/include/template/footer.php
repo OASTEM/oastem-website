@@ -1,4 +1,5 @@
-	<footer>
+	</div>
+    <footer>
 		<ul id="nav">
 			<li><a href="contact.html">Contact</a></li>
 			<li><a href="about.html">About</a></li>
