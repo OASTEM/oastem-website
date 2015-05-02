@@ -54,7 +54,7 @@ $(document).ready(function() {
                     <a target="_blank" href="/docs/STEMMemberApp.pdf">Apply</a>
                     <ul class="sub" style="right:8em;">
                         <li><a href="/docs/STEMMemberApp.pdf">Member</a></li>
-                        <li><a href="/docs/STEMBoardApp.pdf">Board</a></li>
+                        <li><a href="/docs/STEMAdminApp.pdf">Board</a></li>
                     </ul>
                 </li>
 				<li><a href="/contact.html">Contact</a></li>

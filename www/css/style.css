@@ -187,6 +187,10 @@ ul#navmain > li > a {
 	font-size:1.667em;
 }
 
+nav a{
+	transition:color 0.25s ease 0s;
+}
+
 ul#navmain li a:hover {
 	/*background: #222;
 	border: 0;*/ 
