@@ -1,7 +1,6 @@
 #nfd-wrapper{
-	width:99%;
-	margin:0 auto;
-	text-align:center;
+	width:1005px;
+	margin:1em auto;
 }
 
 #cat{
@@ -9,6 +8,7 @@
 	display:block;
 	clear:both;
 	margin:0 auto;
+	text-align:center;
 }
 
 .container{
@@ -71,6 +71,9 @@
 .sel{
 	background-color:#EEE !important;
 }
+.sel:hover{
+	background-color:#CCC !important;
+}
 
 .sel h2{
 	color:black;
@@ -100,7 +103,6 @@
 	background-color:#FF8C00;
 }
 
-
 .hidden{
 	display:none !important;
 }
@@ -121,6 +123,7 @@
 	width:25em;
 	margin:1.25em;
 	display:inline-block;
+	text-align:center;
 }
 
 .post-header{
@@ -172,6 +175,10 @@
 
 pre{
 	font-family:inherit;
+}
+
+#loading{
+	margin:auto;
 }
 
 #nfd-wrapper h1				{font-size: 2em; margin: .67em 0}

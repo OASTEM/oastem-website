@@ -10,8 +10,6 @@
 <script type="text/javascript" src="/js/s3Slider.js"></script>
 <script type="text/javascript" src="/js/global.js"></script>
 
-<script src="/js/uac.js"></script>
-<script src="../../js/posts.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -29,7 +27,6 @@ $(document).ready(function() {
 <?php print Template::getInstance()->getVar('header', 'head'); ?>
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="StyleSheet" href="/css/style.css" />
-<link rel="stylesheet" href="/css/post.css" />
 <link rel="StyleSheet" href="/js/jquery-ui/redmond/jquery-ui-1.8.23.custom.css" />
 </head>
 <body>
@@ -40,14 +37,35 @@ $(document).ready(function() {
 <?php } ?>
 <div id="container">
 	<header>
-		<h1><span>Oxford Academy STEM</span></h1>
 		<nav>
 			<ul id="navmain">
-				<li><a href="/index.html">Home</a></li>
-				<li><a target="_blank" href="/docs/STEMMemberApp.pdf">Apply</a></li>
+            	<li>
+                <a href="/team.html">Team</a>
+                <ul class="sub" style="left:-1em;">
+                	<li><a href="/team.html#board">Board</a></li>
+                    <li><a href="/team.html#mentors">Mentors</a></li>
+                </ul>
+                </li>
+            	<li><a href="/media">Media</a></li>
 				<li><a href="/about.html">About</a></li>
+				<li id="logo"><a href="/index.html"><img src="../../images/r10-White-OA.svg"></a></li>
 				<li><a href="/faq.html">FAQ</a></li>
+				<li>
+                    <a target="_blank" href="/docs/STEMMemberApp.pdf">Apply</a>
+                    <ul class="sub" style="right:8em;">
+                        <li><a href="/docs/STEMMemberApp.pdf">Member</a></li>
+                        <li><a href="/docs/STEMBoardApp.pdf">Board</a></li>
+                    </ul>
+                </li>
 				<li><a href="/contact.html">Contact</a></li>
 			</ul>
 		</nav>
 	</header>
+    <div id="sm-wrap">
+        <ul id="social-media">
+            <li><a href="http://facebook.com/OASTEM/" target="_blank"><img src="../../images/facebook.svg"></a></li>
+            <li><a href="http://instagram.com/oa_stem/" target="_blank"><img src="../../images/instagram.svg"></a></li>
+            <li><a href="http://github.com/OASTEM" target="_blank"><img src="../../images/github.svg"></a></li>
+        </ul>
+	</div>
+	<div id="primary-content">

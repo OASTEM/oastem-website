@@ -23,6 +23,12 @@ $db_list = array(
 	)
 );
 
+$DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive';
+$SERVICE_ACCOUNT_EMAIL = 'EMAIL@developer.gserviceaccount.com';
+$SERVICE_ACCOUNT_PKCS12_FILE_PATH = 'path/to/key.p12';
+$MEDIA_FOLDER_ID = "id_string";
+
+
 function connect_db($dbid){
 		global $db_list;
 		if(array_key_exists($dbid,$db_list)){
