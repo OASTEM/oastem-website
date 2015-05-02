@@ -106,12 +106,17 @@ div#content.nomargin {
 }
 
 header {
-	height: 5em;
+	height: 6.25em;
 	background: #222222 /*url(../images/head-2.png)*/;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	z-index:9999;
 }
 
 headerInner {
-	height: 5em;
+	height: 6.25em;
 	/*background: url(../images/headHighlight.png) 50% 50% no-repeat;*/
 }
 /*
@@ -142,6 +147,7 @@ nav {
 nav{
 	text-align:center;
 	min-width:800px;
+	width:100%;
 }
 
 ul#navmain {
@@ -150,12 +156,13 @@ ul#navmain {
 	margin: 0 auto;
 	padding: 0.333em 0;
 	text-align: center;
-	line-height:5em;
+	line-height:6.25em;
 	display:inline;
 }
 
 ul#social-media{
 	list-style-type: none;
+	z-index:99;
 	padding: 0.333em 0;
 	text-align: center;
 	line-height:5em;
@@ -168,7 +175,7 @@ ul#social-media li, ul#social-media img{
 	padding:5px;
 }
 
-ul#navmain li {
+ul#navmain>li {
 	display: inline;
 	text-transform: lowercase;
 }
@@ -183,18 +190,17 @@ ul#navmain > li > a {
 ul#navmain li a:hover {
 	/*background: #222;
 	border: 0;*/ 
-	text-decoration:underline;
 	color:#EEB346;
 }
 ul.sub{
 	z-index:999;
-	height:2.5em;
+	padding:0.447em;
 }
 
 #logo img{
 	vertical-align:middle;
-	height:50px;
-	line-height:50px;
+	height:75px;
+	line-height:75px;
 	padding:0.417em 0;
 	
 }
@@ -670,7 +676,6 @@ nav ul ul {
 	padding: 0;
 	position: absolute;
 	top: 160%;
-	left:0;
 }
 
 nav ul ul li{
@@ -845,4 +850,9 @@ table#contact textarea {
 	border-color:#333;
 	box-shadow:0px 0px 10px #000;
 	padding:2px 5px 8px;
+	z-index:999;
+}
+
+#primary-content{
+	margin-top:6.25em;
 }

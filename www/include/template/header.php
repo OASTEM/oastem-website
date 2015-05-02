@@ -41,7 +41,7 @@ $(document).ready(function() {
 			<ul id="navmain">
             	<li>
                 <a href="/team.html">Team</a>
-                <ul class="sub">
+                <ul class="sub" style="left:-1em;">
                 	<li><a href="/team.html#board">Board</a></li>
                     <li><a href="/team.html#mentors">Mentors</a></li>
                 </ul>
@@ -50,7 +50,13 @@ $(document).ready(function() {
 				<li><a href="/about.html">About</a></li>
 				<li id="logo"><a href="/index.html"><img src="../../images/r10-White-OA.svg"></a></li>
 				<li><a href="/faq.html">FAQ</a></li>
-				<li><a target="_blank" href="/docs/STEMMemberApp.pdf">Apply</a></li>
+				<li>
+                    <a target="_blank" href="/docs/STEMMemberApp.pdf">Apply</a>
+                    <ul class="sub" style="right:8em;">
+                        <li><a href="/docs/STEMMemberApp.pdf">Member</a></li>
+                        <li><a href="/docs/STEMBoardApp.pdf">Board</a></li>
+                    </ul>
+                </li>
 				<li><a href="/contact.html">Contact</a></li>
 			</ul>
 		</nav>
@@ -62,3 +68,4 @@ $(document).ready(function() {
             <li><a href="http://github.com/OASTEM" target="_blank"><img src="../../images/github.svg"></a></li>
         </ul>
 	</div>
+	<div id="primary-content">
