@@ -24,7 +24,11 @@ $(window).scroll(function() {
 });
 
 function four(){
-	return sci == tech && eng == math && math == tech;
+	return !sci && !eng  && !math && !tech;
+}
+
+function allOn(){
+	return sci && eng  && math && tech;
 }
 
 function refreshFilters(){
@@ -68,7 +72,9 @@ function refreshFilters(){
 }
 
 function checkInit(){
+	console.log(init);
 	if((four() || init) && !fetchingMore){
+		console.log('triggered')
 		sci = !sci;
 		tech = !tech;
 		eng = !eng;
@@ -280,22 +286,22 @@ $(function() {
 	});
 	
 	$('#sci').click(function(){
-		init = four();
+		init = allOn();
 		sci = !sci;
 		refreshFilters();
 	});
 	$('#tech').click(function(){
-		init = four();
+		init = allOn();
 		tech = !tech;
 		refreshFilters();
 	});
 	$('#eng').click(function(){
-		init = four();
+		init = allOn();
 		eng = !eng;
 		refreshFilters();
 	});
 	$('#math').click(function(){
-		init = four();
+		init = allOn();
 		math = !math;
 		refreshFilters();
 	});
