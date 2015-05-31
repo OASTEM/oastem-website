@@ -3,6 +3,12 @@
 	margin:1em auto;
 }
 
+#loading{
+	margin:auto;
+	padding:5px;
+}
+
+
 #cat{
 	list-style:none;
 	display:block;
@@ -176,10 +182,6 @@
 
 pre{
 	font-family:inherit;
-}
-
-#loading{
-	margin:auto;
 }
 
 #nfd-wrapper h1				{font-size: 2em; margin: .67em 0}
