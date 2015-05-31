@@ -326,7 +326,7 @@ ul#slideshowContent {
 }
 
 .one {
-	width: 83.333em;
+	max-width: 83.333em;
 }
 
 .quarter {
