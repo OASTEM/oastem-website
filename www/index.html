@@ -1,5 +1,6 @@
 <?php
 require('./common.php');
+require('./google_common.php');
 
 if (isset($_GET['404'])) {
 	setFlash("error", "Sorry! We couldn't find what you were looking for. Perhaps the navigation bar below will help?");
@@ -12,43 +13,13 @@ $templ->render('header');
 <link rel="stylesheet" href="/css/post.css" />
 <script src="/js/uac.js"></script>
 <script src="../../js/posts.js"></script>
+
 	<div id="slideshow">
-		<ul id="slideshowContent">
-			<li class="slideshowImage">
-				<img src="images/slideshow/vex.jpg" alt="1" />
-				<span class="bottom">
-					<h3>VEX Robotics</h3>
-					<p>The beginning robotics competition of OA STEM.</p>
-				</span>
-			</li>
-			<li class="slideshowImage">
-				<img src="images/slideshow/prog.png" alt="2" />
-				<span class="bottom">
-					<h3>The Annual Dave Wittry Memorial Programming Contest</h3>
-					<p>A race to finish programming challenges.</p>
-				</span>
-			</li>
-			<li class="slideshowImage">
-				<img src="images/slideshow/meeting.jpg" alt="3" />
-				<span class="bottom">
-					<h3>STEM Meetings</h3>
-					<p>Held every week in room 201.</p>
-				</span>
-			</li>
-			<li class="slideshowImage">
-				<img src="images/slideshow/tech.jpg" alt="4" />
-				<span class="bottom">
-					<h3>Technology Department</h3>
-					<p>Expertise from the hardware to the software, creation to management.</p>
-				</span>
-			</li>
-			<li class="slideshowImage">
-				<img src="images/slideshow/linterm.png" alt="5" />
-				<span class="bottom">
-					<h3>Linux</h3>
-					<p>Open source Operating System, used in database and server management.</p></span></li>
-		</ul>
-	</div>
+    <ul id="slideshowContent">
+    	<img id="loading2" src="images/ajax-loader.gif">
+    </ul>
+    </div>
+    
     <div id="nfd-wrapper">        
     <?php
         if($logged_in){

@@ -2,11 +2,6 @@
 require_once('../google_common.php');
 require_once('../config.php');
 
-function startsWith($haystack, $needle) {
-    // search backwards starting from haystack length characters from the end
-    return $needle === "" || strrpos($haystack, $needle, -strlen($haystack)) !== FALSE;
-}
-
 
 if(isset($_GET['list'])){
 	$drive = getDriveService();

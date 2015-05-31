@@ -8,6 +8,11 @@ require_once $lib . "Service/Drive.php";
 require_once $lib . "Service/Oauth2.php";
 require_once $lib . "Auth/AssertionCredentials.php";
 
+function startsWith($haystack, $needle) {
+    // search backwards starting from haystack length characters from the end
+    return $needle === "" || strrpos($haystack, $needle, -strlen($haystack)) !== FALSE;
+}
+
 /**
  * Build and returns a Drive service object authorized with the service accounts
  * that acts on behalf of the given user.
@@ -15,19 +20,25 @@ require_once $lib . "Auth/AssertionCredentials.php";
  * @param userEmail The email of the user.
  * @return Google_DriveService service object.
  */
-function getDriveService() {
+
+function getClient(){
 	global $SERVICE_ACCOUNT_PKCS12_FILE_PATH, $SERVICE_ACCOUNT_EMAIL, $DRIVE_SCOPE;
-  $key = file_get_contents($SERVICE_ACCOUNT_PKCS12_FILE_PATH);
-  $auth = new Google_Auth_AssertionCredentials(
-      $SERVICE_ACCOUNT_EMAIL,
-      array($DRIVE_SCOPE),
-      $key);
+	$key = file_get_contents($SERVICE_ACCOUNT_PKCS12_FILE_PATH);
+	$auth = new Google_Auth_AssertionCredentials(
+    	$SERVICE_ACCOUNT_EMAIL,
+    	array($DRIVE_SCOPE),
+    	$key);
   //$auth->sub = $userEmail;
-  $client = new Google_Client();
+	$client = new Google_Client();
   //$client->setUseObjects(true);
-  $client->setAssertionCredentials($auth);
-  return new Google_Service_Drive($client);
+	$client->setAssertionCredentials($auth);
+	return $client;
 }
+
+function getDriveService() {
+  return new Google_Service_Drive(getClient());
+}
+	
 
 function retrieveAllFiles($service) {
   $result = array();
@@ -98,5 +109,20 @@ function listFileIdInFolder($service,$folderId){
   } while ($pageToken);
   return $result;
 
+}
+
+function downloadFile($service, $file, $client) {
+	$downloadUrl = $file->getDownloadUrl();
+	if ($downloadUrl) {
+		$request = new Google_Http_Request($downloadUrl, 'GET', null, null);
+		$signRq = $client->getAuth()->sign($request);
+		$httpRequest = $client->getIO()->makeRequest($signRq);
+		if ($httpRequest->getResponseHttpCode() == 200) {
+			return $httpRequest->getResponseBody();
+		} else {
+			echo 'Error: HTTP ' + $httpRequest->getResponseHttpCode();
+			return null;
+		}
+	}
 }
 ?>

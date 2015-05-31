@@ -13,7 +13,15 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	<?php print Template::getInstance()->getVar('header', 'jsLoad'); ?>
+	$('#slideshowContent').empty();
+	$.ajax({
+		url:'/getSlider.php',
+		dataType:"html",
+		success:function(response){
+			$('#slideshowContent').html(response);
+			<?php print Template::getInstance()->getVar('header', 'jsLoad'); ?>
+		}
+	});
 });
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
