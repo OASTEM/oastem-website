@@ -33,7 +33,7 @@ $(document).ready(function() {
   ga('send', 'pageview');
 </script>
 <?php print Template::getInstance()->getVar('header', 'head'); ?>
-<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="icon" href="../../images/Rhombus-Favicon.png">
 <link rel="StyleSheet" href="/css/style.css" />
 <link rel="StyleSheet" href="/js/jquery-ui/redmond/jquery-ui-1.8.23.custom.css" />
 </head>
@@ -56,7 +56,7 @@ $(document).ready(function() {
                 </li>
             	<li><a href="/media">Media</a></li>
 				<li><a href="/about">About</a></li>
-				<li id="logo"><a href="/index.html"><img src="../../images/r10-White-OA.svg"></a></li>
+				<li id="logo"><a href="/index.html"><img src="../../images/r11-White-OA.svg"></a></li>
 				<li><a href="/faq">FAQ</a></li>
 				<li>
                     <a target="_blank" href="/docs/STEMMemberApp.pdf">Apply</a>
