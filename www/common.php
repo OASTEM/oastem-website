@@ -45,6 +45,8 @@ $postPHP = $wwwRoot . "ajax_posts.php";
 $postJs = $wwwRoot . "js/posts.js";
 $includes = $wwwRoot . "resources/php/includes.php";
 
+$db = new MySQL($dbhost, $dbport, $dbname, $dbuser, $dbpass);
+
 $logged_in = false; //site-wide 
 $cookie = isset($_COOKIE['nfd_sid']);
 if($cookie){
