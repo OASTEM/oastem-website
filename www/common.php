@@ -3,9 +3,10 @@ session_start();
 
 $starttime = microtime(true);
 
-require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
-require($rtexact.'include/mysqli.php');
-require($rtexact.'include/template.php');
+require('config.php');
+require($wwwRoot . '/google_common.php');
+require($wwwRoot . '/include/mysqli.php');
+require($wwwRoot . '/include/template.php');
 
 $user = null;
 $db = null; 
@@ -38,13 +39,11 @@ $first_sid = session_id();
 
 session_write_close();
 
-$root = "/var/www/oastem/www/";
-
-$uacPHP = $root . "ajax_acct.php";
-$uacJs = $root . "js/uac.js";
-$postPHP = $root . "ajax_posts.php";
-$postJs = $root . "js/posts.js";
-$includes = $root . "resources/php/includes.php";
+$uacPHP = $wwwRoot . "ajax_acct.php";
+$uacJs = $wwwRoot . "js/uac.js";
+$postPHP = $wwwRoot . "ajax_posts.php";
+$postJs = $wwwRoot . "js/posts.js";
+$includes = $wwwRoot . "resources/php/includes.php";
 
 $logged_in = false; //site-wide 
 $cookie = isset($_COOKIE['nfd_sid']);
