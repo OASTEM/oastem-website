@@ -1,6 +1,5 @@
 <?php
-require('./common.php');
-require('./google_common.php');
+require('common.php');
 
 if (isset($_GET['404'])) {
 	setFlash("error", "Sorry! We couldn't find what you were looking for. Perhaps the navigation bar below will help?");
