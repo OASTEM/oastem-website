@@ -867,3 +867,21 @@ table#contact textarea {
 	margin:auto;
 	padding:5px;
 }
+
+/*
+    STEM Summer Page CSS
+**/
+
+#jumbotron{
+    width: 100%;
+    overflow: hidden;
+}
+
+#jumbotron img{
+    left: 50%;
+    margin-left: -960px;
+    position: relative;
+}
+#when{
+    
+}
