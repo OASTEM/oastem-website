@@ -11,12 +11,13 @@ $templ->render('header');
         <div class="post">
             <div id="left">
                 <h1>Introduction</h1>
-                <p>We are Oxford Academy STEM. We are more than just an on campus club. We aim to support the bright young minds of anyone in our region. Over the summer, we have weekly meetings with each department being on a separate day. You can be a part of one, or all four of our departments. If you are interested in finding out what goes on in each of these meetings, keep exploring this page!</p>
+                <p>We are Oxford Academy STEM. We are more than just an on campus club. We aim to support the bright young minds of anyone in our region. Our goal for students is simple: To learn, compete, and thrive. Members of OA STEM participate in STEM related competitions, which range from test taking building robots which compete against others. Don't worry if you don't feel ready for competition, we welcome in students without experience because education is our number one priority. You can be a part of one, or all four of our departments. If you are interested in finding out what goes on in each of these meetings, keep exploring this page!</p>
             </div>
             <div id="right">
-                <p>Some image goes here</p>
+                <img src="Board.jpg">
             </div>
         </div>
+        
         <div class="post">
             <div id="left">
                 <h1>When</h1>
@@ -29,10 +30,10 @@ $templ->render('header');
                         <td><img src="Mathematics.svg" width=100%></td>
                     </tr>
                     <tr>
-                        <td>Mondays</td>
-                        <td>Fridays</td>
-                        <td>Th. &amp; Sat.</td>
-                        <td>Tuesdays</td>
+                        <td><strong>Mondays</strong></td>
+                        <td><strong>Fridays</strong></td>
+                        <td><strong>Th. &amp; Sat.</strong></td>
+                        <td><strong>Tuesdays</strong></td>
                     </tr>
                     <tr>
                         <td>9:00-3:00</td>
@@ -44,11 +45,98 @@ $templ->render('header');
             </div>
             <div id="right">
                 <h1>Where</h1>
-                <p><a href="https://www.google.com/maps/place/Oxford+Academy/@33.8224281,-118.0425098,18z/data=!3m1!4b1!4m2!3m1!1s0x80dd2e98997e6095:0xf86122ccefa379ec">Oxford Academy</a> in the STEM room.<br>5172 Orange Ave Cypress, CA | Room 301</p>
-                <p>map image goes here</p>
+                <p id="noIndent"><a href="https://www.google.com/maps/place/Oxford+Academy/@33.8224281,-118.0425098,18z/data=!3m1!4b1!4m2!3m1!1s0x80dd2e98997e6095:0xf86122ccefa379ec">Oxford Academy, 5172 Orange Ave Cypress, CA | Room 301</a></p>
+                <img src="map.jpg">
+            </div>
+            <div id="jumpTo">
+                <h1>Jump To</h1>
+                <table>
+                    <tr>
+                        <td>
+                            <a href="#science"><img class="top" src="Science.svg">
+                            </td></a>
+                        <td>
+                            <a href="#technology"><img class="top" src="Technology.svg">
+                            </td></a>
+                        <td>
+                            <a href="#engineering"><img class="top" src="Engineering.svg">
+                            </td></a>
+                        <td>
+                            <a href="#mathematics"><img class="top" src="Mathematics.svg">
+                            </td></a>
+                        <td>
+                            <a href="#faq"><img class="top" src="FAQ.svg">
+                            </td></a>
+                    </tr>
+                </table>
             </div>
         </div>
-	</div>
+        <div class="department"><a name="science"></a>
+            <h1><img src="Sci%20-%20Atom.svg">Science</h1>
+            <p id="largerText">Meetings every Monday from 9:00AM to 3:00PM under the direction of Celine Veys, Tiffany Lwin, Abigail Zhong, Samuel Mun, and Mr. Fournier.</p>
+            <div id="left">
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in </p>
+                <img src="placeholder.jpg">
+            </div>
+            <div id="right">
+                <img src="placeholder.jpg">
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in </p>
+            </div>
+        </div>
+
+
+        <div class="department"><a name="technology"></a>
+            <h1><img src="Tech%20-%20Pointer.svg">Technology</h1>
+            <p id="largerText">Meetings every Friday from 9:00AM to 12:00PM under the direction of Michael Duong, and maybe Joy and Peter.</p>
+            <div id="left">
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in </p>
+                <img src="placeholder.jpg">
+            </div>
+            <div id="right">
+                <img src="placeholder.jpg">
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in </p>
+            </div>
+        </div>
+
+
+        <div class="department"><a name="engineering"></a>
+            <h1><img src="Eng%20-%20Gear.svg">Engineering</h1>
+            <p id="largerText">Meetings every Thursday and Saturday from 9:00AM to 12:00PM under the direction of Byron Aguilar and many other adult mentors from NASA JPL, Boeing, and HP.</p>
+            <div id="left">
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in </p>
+                <img src="placeholder.jpg">
+            </div>
+            <div id="right">
+                <img src="placeholder.jpg">
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in </p>
+            </div>
+        </div>
+
+
+        <div class="department"><a name="mathematics"></a>
+            <h1><img src="Math%20-%20Pi.svg">Mathematics</h1>
+            <p id="largerText">Meetings every Tuesday from <strong>gdi Sean I need times</strong> under the direction of Sean Park.</p>
+            <div id="left">
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in </p>
+                <img src="placeholder.jpg">
+            </div>
+            <div id="right">
+                <img src="placeholder.jpg">
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in </p>
+            </div>
+        </div>
+
+
+        <div class="department"><a name="faq"></a>
+            <h1><img src="question.png">Frequenty Asked Questions</h1>
+            <div id="noIndent">
+                <p>Q: Who is eligible to be a member?<br>A: Anyone from anywhere is welcome to join our meetings provided that they are between 7th and 12th grade.</p>
+                <p>Q: How many departments can be joined?<br>A: As many as you want!</p>
+                <p>Q: Will my child contract autism?<br>A: No! Kevin Tran is going to be moving up to UC Berkeley so your child is safe.</p>
+                <p>Q: I still have an unanswered question!<br>A: That's not a question! But if you want to ask something directly to use, you can always hit us up on our <a href="http://ask.fm/OASTEM" target="_blank">ask.fm</a>.</p>
+            </div>
+        </div>
+    </div>
 <?php
 $templ->render('footer');
 ?>

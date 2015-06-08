@@ -1,62 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="210px"
-	 height="210.042px" viewBox="0 0 210 210.042" enable-background="new 0 0 210 210.042" xml:space="preserve">
-<g id="Math_1_">
-	<polygon id="Math" fill="#EBAF20" points="963.108,0.042 753.206,0.042 692.225,210.042 902.127,210.042 	"/>
-	<g>
-		<path d="M776.445,50.198h20.49l30.734,99.386l30.887-99.386h20.336v118.244h-11.773V65.488h-2.141l-30.887,98.707h-12.998
-			l-30.734-98.707h-2.141v102.954h-11.773V50.198z"/>
-	</g>
-</g>
-<g id="Engineering_1_">
-	<polygon id="Engineering_3_" fill="#ED5025" points="732.161,1.042 522.259,1.042 461.277,210.042 671.179,210.042 	"/>
-	<g>
-		<path d="M564.101,50.198h71.354V62.6h-58.442v39.924h48.249v12.232h-48.249v41.283h58.442v12.402h-71.354V50.198z"/>
-	</g>
-</g>
-<g id="Technology_1_">
-	<polygon id="Technology" fill="#7398CF" points="501.214,0.042 291.312,0.042 230.33,210.042 440.232,210.042 	"/>
-	<g>
-		<path d="M323.3,50.198h84.946V62.77h-35.848v105.672h-12.912V62.77H323.3V50.198z"/>
-	</g>
-</g>
-<g id="Science_1_">
-	<polygon id="Science_3_" display="none" fill="#3AB14A" points="270.818,0.042 60.916,0.042 -0.066,210.042 209.837,210.042 	"/>
-	<rect y="0.042" fill="#ED5025" width="210" height="210"/>
-	<g>
-		<path d="M72.389,50.198h71.354V62.6H85.301v39.924h48.249v12.232H85.301v41.283h58.442v12.402H72.389V50.198z"/>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="210px" height="210.042px" viewBox="0 0 210 210.042" enable-background="new 0 0 210 210.042" xml:space="preserve">
+<rect y="0.042" fill="#ED5025" width="210" height="210"/>
+<g>
+	<path d="M72.389,50.198h71.354V62.6H85.301v39.924h48.249v12.231H85.301v41.283h58.442v12.402H72.389V50.198z"/>
 </g>
 </svg>
