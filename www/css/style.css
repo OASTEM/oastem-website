@@ -896,7 +896,6 @@ table#contact textarea {
 }
 #left img{
     max-width: 480px;
-    max-height: 200px;
 }
 .department #left img{
     margin-top: 1em;   
@@ -910,7 +909,6 @@ table#contact textarea {
 }
 #right img{
     max-width: 480px;
-    max-height: 200px;
 }
 .department #right img{
     position: relative;
