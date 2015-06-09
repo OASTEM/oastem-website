@@ -14,6 +14,7 @@
 <script type="text/javascript" src="/js/s3Slider.js"></script>
 <script type="text/javascript" src="/js/global.js"></script>
 
+<script src="/js/nav.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -50,6 +51,9 @@ $(document).ready(function() {
 <div id="container">
 	<header>
 		<nav>
+			<div id="mobile-logo"><a href="/"><img width="205" height="58" src="/images/r11-White-OA.svg"></a></div>
+			<div id="button"><span></span></div>
+
 			<ul id="nav">
             	<li>
 					<a href="/team">Team</a>
