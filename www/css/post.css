@@ -170,7 +170,7 @@
 	float:left;
 }
 
-.content{
+.content,.author{
 	margin:0.625em;
 	text-align:left;
 }

@@ -129,9 +129,9 @@
 					</div>
 					<div class='content-wrapper'>
 						<h3 class='title'>" . $row['title'] . "</h3>
-						<p class='content'>" . $row['content'] . "
+						<p class='content'>" . $row['content'] . "</p>
                         <br /> <br />
-                        <em>Posted by " . $op['first_name'] . " " . $op['last_name'] . ", " . $op['position'] . "</em></p>
+                        <p class='author'><em>Posted by " . $op['first_name'] . " " . $op['last_name'] . ", " . $op['position'] . "</em></p>
 					</div>
 				</div>";
 			}
