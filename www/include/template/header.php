@@ -53,11 +53,6 @@ $(document).ready(function() {
 			<ul id="nav">
             	<li>
 					<a href="/team">Team</a>
-					<ul class="sub-menu">
-	<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="http://braillesignsinc.com/products/store/">Store</a></li>
-	<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="http://braillesignsinc.com/products/quote-request/">Quote</a></li>
-	<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="http://braillesignsinc.com/products/list/">Products</a></li>
-</ul>
                 </li>
             	<li><a href="/media">Media</a></li>
 				<li><a href="/about">About</a></li>
@@ -65,10 +60,6 @@ $(document).ready(function() {
 				<li><a href="/faq">FAQ</a></li>
 				<li>
                     <a target="_blank" href="http://oastem.org/summersignup">Apply</a>
-                    <ul class="sub-menu">
-	<li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="http://braillesignsinc.com/about/us/">About Us</a></li>
-	<li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="http://braillesignsinc.com/about/links/">Links</a></li>
-</ul>
                 </li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
