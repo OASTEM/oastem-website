@@ -50,8 +50,9 @@ $(document).ready(function() {
             	<li>
                 <a href="/team">Team</a>
                 <ul class="sub" style="left:-1em;">
+                    <!--
                 	<li><a href="/team#board">Board</a></li>
-                    <li><a href="/team#mentors">Mentors</a></li>
+                    <li><a href="/team#mentors">Mentors</a></li>-->
                 </ul>
                 </li>
             	<li><a href="/media">Media</a></li>
@@ -59,11 +60,12 @@ $(document).ready(function() {
 				<li id="logo"><a href="/index.html"><img src="../../images/r11-White-OA.svg"></a></li>
 				<li><a href="/faq">FAQ</a></li>
 				<li>
-                    <a target="_blank" href="/docs/STEMMemberApp.pdf">Apply</a>
+                    <a target="_blank" href="http://oastem.org/summersignup">Apply</a>
+                    <!--
                     <ul class="sub" style="right:8em;">
                         <li><a href="/docs/STEMMemberApp.pdf">Member</a></li>
                         <li><a href="/docs/STEMAdminApp.pdf">Board</a></li>
-                    </ul>
+                    </ul>-->
                 </li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>

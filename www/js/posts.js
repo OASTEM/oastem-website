@@ -12,7 +12,8 @@ var tech = true;
 var eng = true;
 var math = true;
 
-var init = true;
+var catInit = true;
+var postInit = false;
 
 var fetchingMore = false;
 var scrollCt = 0;
@@ -72,14 +73,13 @@ function refreshFilters(){
 }
 
 function checkInit(){
-	console.log(init);
-	if((four() || init) && !fetchingMore){
+	if((four() || catInit) && !fetchingMore){
 		console.log('triggered')
 		sci = !sci;
 		tech = !tech;
 		eng = !eng;
 		math = !math;
-		init = false;
+		catInit = false;
 	}
 }
 
@@ -92,12 +92,13 @@ function reloadp(){
 			$('#feed-wrapper').html(response);
 			initDynamicElements();
 			scrollCt = 24;
+            if(!postInit) postInit = true;
 		}
 	});
 }
 
 function loadMore(){
-	if(scrollCt != -1 && !fetchingMore){
+	if(scrollCt != -1 && !fetchingMore && postInit){
 		fetchingMore = true;
 		$('#loading').css('visibility','visible');
 		//setTimeout(function(){
@@ -187,7 +188,11 @@ $(function() {
 		title:"New Post",
 		autoOpen: false,
 		width: 650,
-		position:{my:'top',at:'top+50'},
+		position:{
+            my:"center",
+            at:"center",
+            of:window
+        },
 		resizable:false,
 		draggable:false,
 		modal: true,
@@ -237,7 +242,11 @@ $(function() {
 		title:"Edit Post",
 		autoOpen: false,
 		width: 650,
-		position:{my:'top',at:'top+50'},
+		position:{
+            my:"center",
+            at:"center",
+            of:window
+        },
 		resizable:false,
 		draggable:false,
 		modal: true,
@@ -286,22 +295,22 @@ $(function() {
 	});
 	
 	$('#sci').click(function(){
-		init = allOn();
+		catInit = allOn();
 		sci = !sci;
 		refreshFilters();
 	});
 	$('#tech').click(function(){
-		init = allOn();
+		catInit = allOn();
 		tech = !tech;
 		refreshFilters();
 	});
 	$('#eng').click(function(){
-		init = allOn();
+		catInit = allOn();
 		eng = !eng;
 		refreshFilters();
 	});
 	$('#math').click(function(){
-		init = allOn();
+		catInit = allOn();
 		math = !math;
 		refreshFilters();
 	});
