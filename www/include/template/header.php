@@ -14,6 +14,7 @@
 <script type="text/javascript" src="/js/s3Slider.js"></script>
 <script type="text/javascript" src="/js/global.js"></script>
 
+<script src="/js/nav.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -50,26 +51,19 @@ $(document).ready(function() {
 <div id="container">
 	<header>
 		<nav>
-			<ul id="navmain">
+			<div id="mobile-logo"><a href="/"><img width="205" height="58" src="/images/r11-White-OA.svg"></a></div>
+			<div id="button"><span></span></div>
+
+			<ul id="nav">
             	<li>
-                <a href="/team">Team</a>
-                <ul class="sub" style="left:-1em;">
-                    <!--
-                	<li><a href="/team#board">Board</a></li>
-                    <li><a href="/team#mentors">Mentors</a></li>-->
-                </ul>
+					<a href="/team">Team</a>
                 </li>
             	<li><a href="/media">Media</a></li>
 				<li><a href="/about">About</a></li>
-				<li id="logo"><a href="/index.html"><img src="/images/r11-White-OA.svg"></a></li>
+				<li id="logo"><a href="/"><img width="205" height="58" src="/images/r11-White-OA.svg"></a></li>
 				<li><a href="/faq">FAQ</a></li>
 				<li>
                     <a target="_blank" href="http://oastem.org/summersignup">Apply</a>
-                    <!--
-                    <ul class="sub" style="right:8em;">
-                        <li><a href="/docs/STEMMemberApp.pdf">Member</a></li>
-                        <li><a href="/docs/STEMAdminApp.pdf">Board</a></li>
-                    </ul>-->
                 </li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
