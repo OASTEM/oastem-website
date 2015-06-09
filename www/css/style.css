@@ -967,3 +967,24 @@ table#when td span{
         margin-top: -76px; /* Give negative margin of your fixed element */  	
         visibility: hidden; 
 }
+
+/* CSS Media Queries */
+@media (max-width: 767px){
+    #left{
+        width: 90%;
+        padding-right: 0px;
+        clear: both;
+        float: none;
+        overflow: hidden;
+    }
+    #right{
+        width: 90%;
+        padding-left: 0px;
+        clear: both;
+        float: none;
+        overflow: hidden;
+    }
+    #social-media{
+        display: none;   
+    }
+}
