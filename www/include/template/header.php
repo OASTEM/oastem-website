@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title><?php print Template::getInstance()->getVar('header', 'title'); ?> &raquo; OA STEM</title>
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery-ui.js"></script>
@@ -46,26 +50,25 @@ $(document).ready(function() {
 <div id="container">
 	<header>
 		<nav>
-			<ul id="navmain">
+			<ul id="nav">
             	<li>
-                <a href="/team">Team</a>
-                <ul class="sub" style="left:-1em;">
-                    <!--
-                	<li><a href="/team#board">Board</a></li>
-                    <li><a href="/team#mentors">Mentors</a></li>-->
-                </ul>
+					<a href="/team">Team</a>
+					<ul class="sub-menu">
+	<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="http://braillesignsinc.com/products/store/">Store</a></li>
+	<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="http://braillesignsinc.com/products/quote-request/">Quote</a></li>
+	<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="http://braillesignsinc.com/products/list/">Products</a></li>
+</ul>
                 </li>
             	<li><a href="/media">Media</a></li>
 				<li><a href="/about">About</a></li>
-				<li id="logo"><a href="/index.html"><img src="/images/r11-White-OA.svg"></a></li>
+				<li id="logo"><a href="/"><img width="205" height="58" src="/images/r11-White-OA.svg"></a></li>
 				<li><a href="/faq">FAQ</a></li>
 				<li>
                     <a target="_blank" href="http://oastem.org/summersignup">Apply</a>
-                    <!--
-                    <ul class="sub" style="right:8em;">
-                        <li><a href="/docs/STEMMemberApp.pdf">Member</a></li>
-                        <li><a href="/docs/STEMAdminApp.pdf">Board</a></li>
-                    </ul>-->
+                    <ul class="sub-menu">
+	<li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="http://braillesignsinc.com/about/us/">About Us</a></li>
+	<li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="http://braillesignsinc.com/about/links/">Links</a></li>
+</ul>
                 </li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
