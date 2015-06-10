@@ -885,6 +885,7 @@ table#contact textarea {
 #jumbotron img{
     left: 50%;
     margin-left: -960px;
+    margin-top: -2px;
     position: relative;
 }
 #left{
@@ -958,7 +959,6 @@ table#when td span{
     font-family: 'Titillium Web', sans-serif;
     font-size: 1.5em;
 }
-
 /* Fixes anchor links being blocked by the fixed header */
 .offset:before {
 	display: block; 
