@@ -967,3 +967,7 @@ table#when td span{
         margin-top: -76px; /* Give negative margin of your fixed element */  	
         visibility: hidden; 
 }
+#time{
+    text-align: center;
+    font-size: 2em;
+}
