@@ -63,16 +63,16 @@
 }
 
 #sci:hover{
-	background-color:#1c7b1c;
+	background-color:#5ebd6b;
 }
 #tech:hover{
-	background-color:#3d5589;
+	background-color:#8ca9d5;
 }
 #eng:hover{
-	background-color:#c82b09;
+	background-color:#ed704d;
 }
 #math:hover{
-	background-color:#b4640c;
+	background-color:#ecbc49;
 }
 
 .sel{
