@@ -1,4 +1,3 @@
-	</div>
     <footer>
 		<ul id="footer-nav">
 			<li><a href="contact.html">Contact</a></li>
@@ -11,6 +10,5 @@
 
 		<div style="clear:both"></div>
 	</footer>
-</div>
 </body>
 </html>

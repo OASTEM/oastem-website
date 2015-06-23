@@ -39,7 +39,7 @@ $(document).ready(function() {
 </script>
 <?php print Template::getInstance()->getVar('header', 'head'); ?>
 <link rel="icon" href="/images/Rhombus-Favicon.png">
-<link rel="StyleSheet" href="/css/style.css" />
+<link rel="StyleSheet" href="/css/styleNew.css" />
 <link rel="StyleSheet" href="/js/jquery-ui/redmond/jquery-ui-1.8.23.custom.css" />
 </head>
 <body>
@@ -48,27 +48,20 @@ $(document).ready(function() {
 	<p><?=getFlash();?></p> <span class="small">[CLICK TO CLOSE]</span>
 </div>
 <?php } ?>
-<div id="container">
 	<header>
 		<nav>
-			<div id="mobile-logo"><a href="/"><img width="205" height="58" src="/images/r11-White-OA.svg"></a></div>
-			<div id="button"><span></span></div>
-
-			<ul id="nav">
-            	<li>
-					<a href="/team">Team</a>
-                </li>
+			<ul>
+            	<li><a href="/team">Team</a></li>
             	<li><a href="/media">Media</a></li>
 				<li><a href="/about">About</a></li>
-				<li id="logo"><a href="/"><img width="205" height="58" src="/images/r11-White-OA.svg"></a></li>
+				<li id="logo"><a href="/"><img height="55px" src="/images/r11-White-OA.svg"></a></li>
 				<li><a href="/faq">FAQ</a></li>
-				<li>
-                    <a target="_blank" href="http://oastem.org/summersignup">Apply</a>
-                </li>
+				<li><a target="_blank" href="http://oastem.org/summersignup">Apply</a></li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</nav>
 	</header>
+    <!--
     <div id="sm-wrap">
         <ul id="social-media">
             <li><a href="http://facebook.com/OASTEM/" target="_blank"><img src="/images/facebook.svg"></a></li>
@@ -77,4 +70,4 @@ $(document).ready(function() {
             <li><a href="http://ask.fm/OASTEM" target="_blank"><img src="/images/ask_fm.svg"></a></li>
         </ul>
 	</div>
-	<div id="primary-content">
+-->
