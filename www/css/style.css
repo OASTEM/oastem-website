@@ -107,6 +107,15 @@ div#content {
 div#content.nomargin {
 	margin-top: 0;
 }
+/*HTML 5 Migration */
+section{
+    text-align: center;
+	margin: 1em auto;
+    width: 1000px;
+}
+section.nomargin{
+    margin-top: 0;
+}
 
 header {
 	height: 6.25em;
@@ -711,7 +720,6 @@ input[type='text'], input[type='password'], input[type='submit'], select, button
 	background: #E2E2E2;
 	border: 0.083em solid #CCC;
 	padding: 0.25em;
-	font-family: Tahoma, sans-serif;
 	font-size: 1em;
 	margin: 0 1em;
 }
