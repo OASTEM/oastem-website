@@ -4,7 +4,7 @@ require('../common.php');
 $templ->setTitle('Team');
 $templ->render('header');
 ?>
-<section>
+<div id="content-wrapper">
 <div id="board-wrap">
 <div id="board">
     <div id="vp" class="three column post text-center team-member">
@@ -63,8 +63,6 @@ $templ->render('header');
     </div>
 </div>
 </div>
-    
-    
 <div id="mentors-wrap">
 <div id="mentors">
 	<div id="peralta" class="three column post text-center team-member">
@@ -101,7 +99,7 @@ $templ->render('header');
     </div>
 </div>
 </div>
-</section>
+</div>
 
 <?php
 $templ->render('footer');
