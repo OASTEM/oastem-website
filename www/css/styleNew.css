@@ -90,35 +90,93 @@ header {
 	top: 0;
 	z-index: 100;
 }
+div#shadow {
+	height: 0.75em;
+	background: url(../images/shadow.png);
+	margin-bottom: -0.75em;
+	position: relative;
+	z-index: 100;
+}
 
 nav {
 	text-align: center;
 	height: 75px;
 }
-nav ul{
-    height: 75px;
-    padding: 10px 0px;
-}
-nav ul li{
-    display: inline-block;
-    text-transform: lowercase;
-    vertical-align: middle;
-    padding: 0 2em;
-    transition: color 0.25s;
+
+ul#nav {
+	list-style-type: none;
+	margin: 0 auto;
+	text-align: center;
 }
 
-nav ul li a{
-    color: #ddd;
-    font-size: 1.667em;
+ul#nav li {
+	display: inline-block;
+	text-transform: lowercase;
+	position: relative;
 }
 
-nav ul li a:hover{
-    color: #EEB346;
-}
-li#logo{
-    padding: 0;
+ul#nav li a {
+	display: block;
+	color: #DDD;
+	padding: 0 1em;
+	text-decoration: none;
+	border-bottom: none;
+	font-size: 1.5em;
+	line-height: 75px;
+	height: 75px;
+	vertical-align: middle;
 }
 
+ul#nav li#logo a {
+	padding: 0 1em;
+}
+
+nav a{
+	transition:color 0.25s ease 0s;
+}
+
+ul#nav li a:hover {
+	/*background: #222;
+	border: 0;*/ 
+	color:#EEB346;
+}
+
+ul#nav li ul.sub-menu {
+	list-style-type: none;
+	opacity: 0;
+	visibility: hidden;
+	float: left;
+	left: -45%;
+	position: absolute;
+	top: 75px;
+	margin: 0;
+	min-width: 150px;
+	transition: opacity 0.25s ease;
+}
+
+ul#nav li:hover ul.sub-menu, ul#nav li a:focus + ul.sub-menu {
+	opacity: 1;
+	visibility: visible;
+}
+
+ul#nav li ul.sub-menu li {
+	display: list-item;
+	width: 100%;
+}
+
+header nav div#button {
+	display: none;
+}
+
+#mobile-logo {
+	display: none;
+}
+
+#logo img, #mobile-logo img {
+	vertical-align: middle;
+	height: 75px;
+	line-height: 75px;
+}
 ul#social-media {
 	list-style-type: none;
 	z-index:99;
@@ -375,7 +433,7 @@ table.plain th, table.plain td {
 }
 
 /**************************************************/
-/** Contentt **/
+/** Content **/
 /**************************************************/
 
 section{
@@ -580,7 +638,71 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldse
 	margin: 0; padding: 0; border: 0;
 }
 /*end*/
+nav ul ul {
+	top:-999px;
+	position:absolute;
+	transition: top 0.25s ease;
+}
 
+nav ul li:hover > ul {
+	top:2.625em;
+}
+
+nav ul{
+	background-color:transparent;
+	list-style:none;
+	font-family:"Noto Sans", sans-serif;
+	margin-top:0.167em	;
+	/* margin-left:37%; */
+	
+	position:relative;
+	/* display: inline-table; */
+}
+
+nav ul:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+nav ul li {
+	/* float:left; */
+}
+
+nav ul li:hover{
+	/* background-color:#333333; */
+}
+
+nav ul li a {
+	/* display: block; */
+	padding: 0.417em;
+	color:#fff;
+	
+}
+
+nav ul ul {
+	background-color:#222;
+	border-radius: 0px;
+	padding: 0;
+}
+
+nav ul ul li{
+	float: none;
+	position:relative;
+}
+
+nav ul ul li a{
+	padding: 0.417em 0.667em;
+	color: #fff;
+	line-height:1.667em;
+	font-size:1.333em;
+}
+
+nav ul ul ul{
+	position:absolute;
+	left:100%;
+	top:0;
+}
 input[type='text'], input[type='password'], input[type='submit'], select, button, textarea {
 	background: #E2E2E2;
 	border: 0.083em solid #CCC;
@@ -704,9 +826,9 @@ table#contact textarea {
 	padding:5px;
 }
 
-/*
-    STEM Summer Page CSS
-**/
+/**************************************************/
+/** Summer STEM Page CSS
+/**************************************************/
 
 #jumbotron{
     width: 100%;
@@ -798,6 +920,10 @@ table#when td span{
         margin-top: -76px; /* Give negative margin of your fixed element */  	
         visibility: hidden; 
 }
+
+/**************************************************/
+/** Media Queries **/
+/**************************************************/
 
 @media screen and (max-width: 767px) {
 	div#content {
