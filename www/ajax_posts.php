@@ -121,7 +121,7 @@
 				}else{
 						echo"
 							<h2 class='category'>" . $cat['name'] . "</h2>
-							<p class='timestamp'>" . date('D',$tstring) . ", <time class='post-time' datetime='" . $row['time']
+							<p class='timestamp'>" . date('F j',$tstring) . ", <time class='post-time' datetime='" . $row['time']
 							 . "'>" . date('D, M d, Y g:i A',$tstring)
 							 . "</time></p>";
 				}
