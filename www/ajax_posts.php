@@ -130,8 +130,8 @@
 					<div class='content-wrapper'>
 						<h3 class='title'>" . $row['title'] . "</h3>
 						<p class='content'>" . $row['content'] . "</p>
-                        <br /> <br />
-                        <p class='author'><em>Posted by " . $op['first_name'] . " " . $op['last_name'] . ", " . $op['position'] . "</em></p>
+                        <br/>
+                        <p class='author'>Posted by " . $op['first_name'] . " " . $op['last_name'] . "<br/>" . $op['position'] . "</p>
 					</div>
 				</div>";
 			}
