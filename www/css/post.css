@@ -141,19 +141,13 @@
 	padding: 0.9375em 0;
 }
 
-.category, .edit-button{
+.category{
 	color:white;
-	display:inline-block;
-	width:35%
-	margin:0.625em;
 }
 
-.timestamp, .delete-button{
+.timestamp{
 	color:white;
-	display:inline-block;
-	width:50%;
-	margin:0.625em;
-	text-align:right;
+	text-align:center;
 }
 
 .title{
