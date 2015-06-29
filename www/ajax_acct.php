@@ -36,12 +36,12 @@
 			$user = $db->real_escape_string($_POST['user']);
 			$pass = sha1($_POST['pass']);
 			
-			$sql = "SELECT * FROM users WHERE (username = '$user' OR email = '$user') AND password = '$pass'";
+			$sql = "SELECT * FROM users WHERE (username = '$user' OR email = '$user') AND password = '$pass' AND inactive = 0";
 			$result = $db->query($sql);
 			
 			$data = $result->fetch_assoc();
 			
-			if($result->num_rows == 1 && $data['inactive'] == 0){
+			if($result->num_rows == 1){
 				echo 'success';
 				session_start();
 				
