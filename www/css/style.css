@@ -1,5 +1,7 @@
 /*@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,300italic,300,600,600italic,700italic);*/
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -58,7 +60,7 @@ table {
 
 /** End CSS reset **/
 
-h1,h2,h3,h4,h5,h6,p{
+h1,h2,h3,h4,h5,h6,p,td{
 	font-family:"Noto Sans";
 }
 
@@ -98,11 +100,21 @@ div#container {
 div#content {
 	text-align: center;
 	margin: 1em auto;
-	width: 83.75em;
+	/*width: 83.75em;*/
+    width: 1000px;
 }
 
 div#content.nomargin {
 	margin-top: 0;
+}
+/*HTML 5 Migration */
+section{
+    text-align: center;
+	margin: 1em auto;
+    width: 1000px;
+}
+section.nomargin{
+    margin-top: 0;
 }
 
 header {
@@ -112,7 +124,8 @@ header {
 	top:0;
 	left:0;
 	right:0;
-	z-index:9999
+	z-index:1;
+    box-shadow: 0 0 1em black;
 }
 
 headerInner {
@@ -220,6 +233,7 @@ hr {
 p {
 	margin: 0.5em 0;
 	line-height: 1.5em;
+    text-align: justify;
 }
 
 p:first-child { 
@@ -405,19 +419,19 @@ li.slideshowImage span.right {
 }
 
 .science {
-	background-color: #34cd34;
+	background-color: #3ab14a;
 }
 
 .technology {
-	background-color: #729dd9;
+	background-color: #7398cf;
 }
 
 .engineering {
-	background-color: #f75111;
+	background-color: #ed5025;
 }
 
 .mathematics {
-	background-color: #f1b216;
+	background-color: #ebaf20;
 }
 
 table {
@@ -426,8 +440,9 @@ table {
 
 table th, table td {
 	text-align: center;
-	padding: 1em;
-	border: 0.083em solid #ccc;
+	padding: 0.25em 0em;
+    border: none;
+	/*border: 0.083em solid #ccc;*/
 }
 
 table th {
@@ -706,7 +721,6 @@ input[type='text'], input[type='password'], input[type='submit'], select, button
 	background: #E2E2E2;
 	border: 0.083em solid #CCC;
 	padding: 0.25em;
-	font-family: Tahoma, sans-serif;
 	font-size: 1em;
 	margin: 0 1em;
 }
@@ -866,4 +880,103 @@ table#contact textarea {
 #loading2{
 	margin:auto;
 	padding:5px;
+}
+
+/*
+    STEM Summer Page CSS
+**/
+
+#jumbotron{
+    width: 100%;
+    overflow: hidden;
+}
+
+#jumbotron img{
+    left: 50%;
+    margin-left: -960px;
+    margin-top: -2px;
+    position: relative;
+}
+#left{
+    width: 50%;
+    padding-right: 20px;
+    clear: left;
+    float: left;
+    overflow: hidden;
+}
+#left img{
+    max-width: 480px;
+}
+.department #left img{
+    margin-top: 1em;   
+}
+#right{
+    width: 50%;
+    padding-left: 20px;
+    clear: right;
+    float: right;
+    overflow: hidden;
+}
+#right img{
+    max-width: 480px;
+}
+.department #right img{
+    position: relative;
+    left: -20px;
+}
+#jumpTo{
+    clear: both;   
+}
+#jumpTo img{
+    max-width: 200px;
+    -webkit-transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -o-transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out;
+}
+#jumpTo img.top:hover{
+    opacity: .8;
+    text-decoration: none;
+}
+div.department h1{
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 4.5em;
+}
+div.department h1 img{
+    height: .75em;
+    padding-right: .2em;
+}
+div.department{
+    text-indent: 2em;
+    font-family: 'Noto-sans', 'sans-serif';
+    font-size: 14px;
+}
+#largerText{
+    font-size: 1.5em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    text-indent: 0px;
+}
+#noIndent{
+    text-indent: 0px;
+    font-size: 100%;
+}
+table#when, table#when td{
+    border: 0.083em solid #222;
+}
+table#when td span{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5em;
+}
+/* Fixes anchor links being blocked by the fixed header */
+.offset:before {
+	display: block; 
+ 	content: " "; 
+  	height: 76px;      /* Give height of your fixed element */
+        margin-top: -76px; /* Give negative margin of your fixed element */  	
+        visibility: hidden; 
+}
+#time{
+    text-align: center;
+    font-size: 2em;
 }

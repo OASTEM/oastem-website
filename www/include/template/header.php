@@ -2,11 +2,14 @@
 <html>
 <head>
 <title><?php print Template::getInstance()->getVar('header', 'title'); ?> &raquo; OA STEM</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery-ui.js"></script>
 <script src="/js/jquery.form.js"></script>
 <script src="/js/jquery.timeago.js"></script>
-
 <script type="text/javascript" src="/js/s3Slider.js"></script>
 <script type="text/javascript" src="/js/global.js"></script>
 
@@ -33,7 +36,7 @@ $(document).ready(function() {
   ga('send', 'pageview');
 </script>
 <?php print Template::getInstance()->getVar('header', 'head'); ?>
-<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="icon" href="../../images/Rhombus-Favicon.png">
 <link rel="StyleSheet" href="/css/style.css" />
 <link rel="StyleSheet" href="/js/jquery-ui/redmond/jquery-ui-1.8.23.custom.css" />
 </head>
@@ -50,20 +53,22 @@ $(document).ready(function() {
             	<li>
                 <a href="/team">Team</a>
                 <ul class="sub" style="left:-1em;">
+                    <!--
                 	<li><a href="/team#board">Board</a></li>
-                    <li><a href="/team#mentors">Mentors</a></li>
+                    <li><a href="/team#mentors">Mentors</a></li>-->
                 </ul>
                 </li>
             	<li><a href="/media">Media</a></li>
 				<li><a href="/about">About</a></li>
-				<li id="logo"><a href="/index.html"><img src="../../images/r10-White-OA.svg"></a></li>
+				<li id="logo"><a href="/index.html"><img src="../../images/r11-White-OA.svg"></a></li>
 				<li><a href="/faq">FAQ</a></li>
 				<li>
-                    <a target="_blank" href="/docs/STEMMemberApp.pdf">Apply</a>
+                    <a target="_blank" href="http://oastem.org/summersignup">Apply</a>
+                    <!--
                     <ul class="sub" style="right:8em;">
                         <li><a href="/docs/STEMMemberApp.pdf">Member</a></li>
                         <li><a href="/docs/STEMAdminApp.pdf">Board</a></li>
-                    </ul>
+                    </ul>-->
                 </li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>

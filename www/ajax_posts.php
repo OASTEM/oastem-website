@@ -116,12 +116,12 @@
 				<div id='post" . $row['pid'] . "' class='post-wrapper' data-pid='" . $row['pid'] . "' data-cid='" . $op['cid'] . "'>
 					<div class='post-header' style='background-color:" . $cat['color1'] . "'>";
 				if($logged_in && ($row['uid'] == $_SESSION['uid'] || $_SESSION['sa'] == 1)){ //check permissions
-					echo "<h2 class='edit-button'>Edit</h2> 
-						<p class='delete-button'>X</h2>";
+					echo   "<button type='button' style='float: left' class='edit-button'>Edit</button>
+                           <button type='button' style='float: right' class='delete-button'>Delete</button>";
 				}else{
 						echo"
 							<h2 class='category'>" . $cat['name'] . "</h2>
-							<p class='timestamp'>" . date('D',$tstring) . ", <time class='post-time' datetime='" . $row['time']
+							<p class='timestamp'>" . date('F j',$tstring) . ", <time class='post-time' datetime='" . $row['time']
 							 . "'>" . date('D, M d, Y g:i A',$tstring)
 							 . "</time></p>";
 				}
@@ -130,6 +130,8 @@
 					<div class='content-wrapper'>
 						<h3 class='title'>" . $row['title'] . "</h3>
 						<p class='content'>" . $row['content'] . "</p>
+                        <br/>
+                        <p class='author'>Posted by " . $op['first_name'] . " " . $op['last_name'] . "<br/>" . $op['position'] . "</p>
 					</div>
 				</div>";
 			}
