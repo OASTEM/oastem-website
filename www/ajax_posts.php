@@ -116,9 +116,9 @@
 				<div id='post" . $row['pid'] . "' class='post-wrapper' data-pid='" . $row['pid'] . "' data-cid='" . $op['cid'] . "'>
 					<div class='post-header' style='background-color:" . $cat['color1'] . "'>";
 				if($logged_in && ($row['uid'] == $_SESSION['uid'] || $_SESSION['sa'] == 1)){ //check permissions
-					echo   "<button type='button' style='float: left' class='edit-button'>Edit</button>
-                           <button type='button' style='float: right' class='delete-button'>Delete</button>";
-				}else{
+					echo   "<button type='button' style='float: left' class='edit button'>Edit</button>
+                           <button type='button' style='float: right' class='delete button'>Delete</button>";
+				}else if (!$logged_in){
 						echo"
 							<h2 class='category'>" . $cat['name'] . "</h2>
 							<p class='timestamp'>" . date('F j',$tstring) . ", <time class='post-time' datetime='" . $row['time']

@@ -187,3 +187,25 @@ pre{
 #nfd-wrapper h1, h2, h3, h4,
 #nfd-wrapper h5, h6, b,
 strong          { font-weight: bolder }
+
+.button{
+    font-size: 1.5em;
+    font-family:inherit;
+    font-weight: bold;
+    color: #ddd;
+    background: #222;
+    border-style: none;
+}
+
+.button:hover{
+    background: #444;
+    border-style: none;
+}
+
+.edit{
+    float: left;   
+}
+
+.delete{
+    float: right;
+}
