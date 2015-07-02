@@ -202,10 +202,32 @@ strong          { font-weight: bolder }
     border-style: none;
 }
 
-.edit{
-    float: left;   
+.edit-button{
+    float: left;
+    font-size: 1.5em;
+    font-family:inherit;
+    font-weight: bold;
+    color: #ddd;
+    background: #222;
+    border-style: none;
 }
 
-.delete{
+.delete-button{
     float: right;
+    font-size: 1.5em;
+    font-family:inherit;
+    font-weight: bold;
+    color: #ddd;
+    background: #222;
+    border-style: none;
+}
+
+.edit-button:hover{
+    background: #444;
+    border-style: none;
+}
+
+.delete-button:hover{
+    background: #444;
+    border-style: none;
 }
