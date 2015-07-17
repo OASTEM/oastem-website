@@ -4,17 +4,20 @@ require('../common.php');
 $templ->setTitle('PIZZA');
 $templ->render('header');
 ?>
-<section>
+
+<section><div class="one column post">
 <body>
     <a href="http://pizzacodes.com/" target="_blank"><img src="r11%20Pizza.png"style="max-width: 1000px;"></a>
-    <form>
-        <input type="checkbox" name="pep">Pepperoni<br>
+    <form action="make_pizza.php" action="POST">
+        <h1>Meats</h1>
+        <input type="checkbox" name="pepo">Pepperoni<br>
         <input type="checkbox" name="sau">Sausage<br>
         <input type="checkbox" name="can>">Canadian Sausage<br>
         <input type="checkbox" name="chi">Chicken<br>
         <input type="checkbox" name="bac">Bacon<br>
         <input type="checkbox" name="anc">Anchovies<br>
-        <input type="checkbox" name="pep">Peppers<br>
+        <h1>Not Meat</h1>
+        <input type="checkbox" name="pepr">Peppers<br>
         <input type="checkbox" name="jal">Jalepenos<br>
         <input type="checkbox" name="oli">Olives<br>
         <input type="checkbox" name="pin">Pineapple<br>
@@ -22,11 +25,14 @@ $templ->render('header');
         <input type="checkbox" name="oni">Onions<br>
         <input type="checkbox" name="mus">Mushrooms<br>
         <input type="checkbox" name="whi">Whipping<br>
-        Your Name<input type="text" name="name">
+        <h1>Are you vegetarian?</h1>
+        <input type="radio" name="veg" value="isVeg" checked>Yes<br>
+        <input type="radio" name="veg" value="notVeg">No<br>
+        Your Name<input type="text" name="name"><br>
         <input type="submit" name="Submit">
     </form>
 </body>
-</section>
+</div></section>
 <?php
 $templ->render('footer');
 ?>
