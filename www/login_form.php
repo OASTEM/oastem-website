@@ -3,7 +3,7 @@
 	require_once("common.php");
 	if(!$logged_in){
 ?>
-    <form id="login-form" method="post" action="/ajax_acct.php?login">
+    <form id="login-form" method="post" action="/ajax_acct.php?login" accept-charset="utf-8">
     <label for="user" class="form-element">Username or Email</label>
     <input type="text" name="user" id="iuser" class="form-element">
     

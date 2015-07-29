@@ -104,36 +104,36 @@ function listPosts($sql,$db){ //print posts based on $sql given
 	global $logged_in;
 	$result = $db->query($sql);
 		
-	if($result->num_rows < 1){ //make sure there are actual results
-		echo 'No more.';
-	}else{
-		while($row = $result->fetch_assoc()){ //for each result from db
-			$op = getData($row['uid'],$db);
-			$tstring = strtotime($row['time']);
-			$cat = getCat($op['cid'],$db);
-			
-			echo "
-			<div id='post" . $row['pid'] . "' class='post-wrapper' data-pid='" . $row['pid'] . "' data-cid='" . $op['cid'] . "'>
-				<div class='post-header' style='background-color:" . $cat['color1'] . "'>";
-			if($logged_in && ($row['uid'] == $_SESSION['uid'] || $_SESSION['sa'] == 1)){ //check permissions
-				echo "<h2 class='edit-button'>Edit</h2> 
-					<p class='delete-button'>X</h2>";
-			}else{
-					echo"
-						<h2 class='category'>" . $cat['name'] . "</h2>
-						<p class='timestamp'>" . date('D',$tstring) . ", <time class='post-time' datetime='" . $row['time']
-						 . "'>" . date('D, M d, Y g:i A',$tstring)
-						 . "</time></p>";
-			}
-					echo"
-				</div>
-				<div class='content-wrapper'>
-					<h3 class='title'>" . $row['title'] . "</h3>
-					<p class='content'>" . $row['content'] . "
-					<br /> <br />
-					<em>Posted by " . $op['first_name'] . " " . $op['last_name'] . ", " . $op['position'] . "</em></p>
-				</div>
-			</div>";
+		if($result->num_rows < 1){ //make sure there are actual results
+			echo 'No more.';
+		}else{
+			while($row = $result->fetch_assoc()){ //for each result from db
+				$op = getData($row['uid'],$db);
+				$tstring = strtotime($row['time']);
+				$cat = getCat($op['cid'],$db);
+				
+				echo "
+				<div id='post" . $row['pid'] . "' class='post-wrapper' data-pid='" . $row['pid'] . "' data-cid='" . $op['cid'] . "'>
+					<div class='post-header' style='background-color:" . $cat['color1'] . "'>";
+				if($logged_in && ($row['uid'] == $_SESSION['uid'] || $_SESSION['sa'] == 1)){ //check permissions
+					echo   "<button type='button' style='float: left' class='edit-button'>Edit</button>
+                           <button type='button' style='float: right' class='delete-button'>Delete</button>";
+				}else if (!$logged_in){
+						echo"
+							<h2 class='category'>" . $cat['name'] . "</h2>
+							<p class='timestamp'>" . date('F j',$tstring) . ", <time class='post-time' datetime='" . $row['time']
+							 . "'>" . date('D, M d, Y g:i A',$tstring)
+							 . "</time></p>";
+				}
+						echo"
+					</div>
+					<div class='content-wrapper'>
+						<h3 class='title'>" . $row['title'] . "</h3>
+						<p class='content'>" . $row['content'] . "</p>
+                        <br/>
+                        <p class='author'>Posted by " . $op['first_name'] . " " . $op['last_name'] . "<br/>" . $op['position'] . "</p>
+					</div>
+				</div>";
 		}
 	}
 }

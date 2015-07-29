@@ -63,16 +63,16 @@
 }
 
 #sci:hover{
-	background-color:#1c7b1c;
+	background-color:#5ebd6b;
 }
 #tech:hover{
-	background-color:#3d5589;
+	background-color:#8ca9d5;
 }
 #eng:hover{
-	background-color:#c82b09;
+	background-color:#ed704d;
 }
 #math:hover{
-	background-color:#b4640c;
+	background-color:#ecbc49;
 }
 
 .sel{
@@ -141,19 +141,13 @@
 	padding: 0.9375em 0;
 }
 
-.category, .edit-button{
+.category{
 	color:white;
-	display:inline-block;
-	width:35%
-	margin:0.625em;
 }
 
-.timestamp, .delete-button{
+.timestamp{
 	color:white;
-	display:inline-block;
-	width:50%;
-	margin:0.625em;
-	text-align:right;
+	text-align:center;
 }
 
 .title{
@@ -193,3 +187,47 @@ pre{
 #nfd-wrapper h1, h2, h3, h4,
 #nfd-wrapper h5, h6, b,
 strong          { font-weight: bolder }
+
+.button{
+    font-size: 1.5em;
+    font-family:inherit;
+    font-weight: bold;
+    color: #ddd;
+    background: #222;
+    border-style: none;
+}
+
+.button:hover{
+    background: #444;
+    border-style: none;
+}
+
+.edit-button{
+    float: left;
+    font-size: 1.5em;
+    font-family:inherit;
+    font-weight: bold;
+    color: #ddd;
+    background: #222;
+    border-style: none;
+}
+
+.delete-button{
+    float: right;
+    font-size: 1.5em;
+    font-family:inherit;
+    font-weight: bold;
+    color: #ddd;
+    background: #222;
+    border-style: none;
+}
+
+.edit-button:hover{
+    background: #444;
+    border-style: none;
+}
+
+.delete-button:hover{
+    background: #444;
+    border-style: none;
+}

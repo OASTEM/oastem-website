@@ -6,11 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title><?php print Template::getInstance()->getVar('header', 'title'); ?> &raquo; OA STEM</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery-ui.js"></script>
 <script src="/js/jquery.form.js"></script>
 <script src="/js/jquery.timeago.js"></script>
-
 <script type="text/javascript" src="/js/s3Slider.js"></script>
 <script type="text/javascript" src="/js/global.js"></script>
 
@@ -69,12 +72,4 @@ $(document).ready(function() {
 			</ul>
 		</nav>
 	</header>
-    <div id="sm-wrap">
-        <ul id="social-media">
-            <li><a href="http://facebook.com/OASTEM/" target="_blank"><img src="/images/facebook.svg"></a></li>
-            <li><a href="http://instagram.com/oa_stem/" target="_blank"><img src="/images/instagram.svg"></a></li>
-            <li><a href="http://github.com/OASTEM" target="_blank"><img src="/images/github.svg"></a></li>
-            <li><a href="http://ask.fm/OASTEM" target="_blank"><img src="/images/ask_fm.svg"></a></li>
-        </ul>
-	</div>
 	<div id="primary-content">
