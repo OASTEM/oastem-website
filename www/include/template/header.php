@@ -42,7 +42,7 @@ $(document).ready(function() {
 </script>
 <?php print Template::getInstance()->getVar('header', 'head'); ?>
 <link rel="icon" href="/images/Rhombus-Favicon.png">
-<link rel="StyleSheet" href="/css/styleNew.css" />
+<link rel="StyleSheet" href="/css/style.css" />
 <link rel="StyleSheet" href="/js/jquery-ui/redmond/jquery-ui-1.8.23.custom.css" />
 </head>
 <body>

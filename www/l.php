@@ -1,6 +1,6 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
-require($rtexact.'include/mysqli.php');
+require('config.php');
+require($wwwRoot.'/include/mysqli.php');
 
 $db = new MySQL($dbhost, $dbport, $dbname, $dbuser, $dbpass);
 
