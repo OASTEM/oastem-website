@@ -9,7 +9,6 @@ $templ->render('header');
         <a href="http://oastem.org/summersignup" target="_blank"><img src="Signup.jpg"></a>
     </div>
 	<section>
-        
         <div class="post">
             <div id="left">
                 <h1>Introduction</h1>

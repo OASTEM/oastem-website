@@ -1,6 +1,5 @@
 <?php
-require('./common.php');
-require('./google_common.php');
+require('common.php');
 
 if (isset($_GET['404'])) {
 	setFlash("error", "Sorry! We couldn't find what you were looking for. Perhaps the navigation bar below will help?");
@@ -12,11 +11,12 @@ $templ->render('header');
 ?>
 <link rel="stylesheet" href="/css/post.css" />
 <script src="/js/uac.js"></script>
-<script src="../../js/posts.js"></script>
+<script src="/js/posts.js"></script>
+
 <!--
 	<div id="slideshow">
     <ul id="slideshowContent">
-    	<img id="loading2" src="images/ajax-loader.gif">
+    	<img id="loading2" src="/images/ajax-loader.gif">
     </ul>
     </div>
     -->
@@ -53,11 +53,11 @@ $templ->render('header');
                 if($logged_in){
             ?>
             <div id="new-post" class="container">
-                <img src="images/plus.svg" height="37px">
+                <img src="/images/plus.svg" height="37px">
                 <h2>New Post</h2>
             </div>
             <div id="logout" class="container">
-                <img src="images/lock.svg" height="37px">
+                <img src="/images/lock.svg" height="37px">
               <h2>Logout</h2>
             </div>
             <?php
@@ -67,29 +67,29 @@ $templ->render('header');
         
         <ul id="cat">
             <li id="sci" class='container'>
-                <img src="images/Atom.svg" height="37px">
+                <img src="/images/Atom.svg" height="37px">
                <h2>Science</h2>
             </li>
             
             <li id="tech" class='container'>
-                <img src="images/Pointer.svg" height="37px">
+                <img src="/images/Pointer.svg" height="37px">
                 <h2>Technology</h2>
             </li>
         
             <li id="eng" class='container'>
-                <img src="images/Gear.svg" height="37px">
+                <img src="/images/Gear.svg" height="37px">
                 <h2>Engineering</h2>
             </li>
             
             <li id="math" class='container'>
-                <img src="images/Pi.svg" height="37px">
+                <img src="/images/Pi.svg" height="37px">
                 <h2>Math</h2>
             </li>
         </ul>
         <div id="feed-wrapper">
         </div>
         <div id="load-wrap">
-        	<img id="loading" src="images/ajax-loader.gif">
+        	<img id="loading" src="/images/ajax-loader.gif">
         </div>
 
 

@@ -1,0 +1,1024 @@
+/*@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,300italic,300,600,600italic,700italic);*/
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700|Robot:100|Titillium+Web);
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+strong, b { font-weight: bold; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**************************************************/
+/** End CSS reset **/
+/**************************************************/
+
+h1,h2,h3,h4,h5,h6,p,td{
+	font-family:"Noto Sans";
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+body {
+	background: #EEE /*url(../images/back2.png)*/;
+	font-family: "Noto Sans", sans-serif;
+	font-size: 12px;
+}
+
+a {
+	color: #497097;
+	text-decoration: none;
+    -webkit-transition: color .25s;
+    transition: color .25s;
+}
+
+a:hover {
+	color: #1A2836;
+}
+
+header {
+	height: 6.25em;
+	width: 100%;
+	background: #222222;
+	position: fixed;
+	top: 0;
+	z-index: 100;
+}
+div#shadow {
+	height: 0.75em;
+	background: url(../images/shadow.png);
+	margin-bottom: -0.75em;
+	position: relative;
+	z-index: 100;
+}
+
+nav {
+	text-align: center;
+	height: 75px;
+}
+
+ul#nav {
+	list-style-type: none;
+	margin: 0 auto;
+	text-align: center;
+}
+
+ul#nav li {
+	display: inline-block;
+	text-transform: lowercase;
+	position: relative;
+}
+
+ul#nav li a {
+	display: block;
+	color: #DDD;
+	padding: 0 1em;
+	text-decoration: none;
+	border-bottom: none;
+	font-size: 1.5em;
+	line-height: 75px;
+	height: 75px;
+	vertical-align: middle;
+}
+
+ul#nav li#logo a {
+	padding: 0 1em;
+}
+
+nav a{
+	transition:color 0.25s ease 0s;
+}
+
+ul#nav li a:hover {
+	/*background: #222;
+	border: 0;*/ 
+	color:#EEB346;
+}
+
+ul#nav li ul.sub-menu {
+	list-style-type: none;
+	opacity: 0;
+	visibility: hidden;
+	float: left;
+	left: -45%;
+	position: absolute;
+	top: 75px;
+	margin: 0;
+	min-width: 150px;
+	transition: opacity 0.25s ease;
+}
+
+ul#nav li:hover ul.sub-menu, ul#nav li a:focus + ul.sub-menu {
+	opacity: 1;
+	visibility: visible;
+}
+
+ul#nav li ul.sub-menu li {
+	display: list-item;
+	width: 100%;
+}
+
+header nav div#button {
+	display: none;
+}
+
+#mobile-logo {
+	display: none;
+}
+
+#logo img, #mobile-logo img {
+	vertical-align: middle;
+	height: 75px;
+	line-height: 75px;
+}
+ul#social-media {
+	list-style-type: none;
+	z-index:99;
+	padding: 0.333em 0;
+	text-align: center;
+	line-height:5em;
+	float:right;
+	margin-right:10px;
+}
+
+ul#social-media li, ul#social-media img {
+	height:40px;
+	padding:5px;
+}
+
+hr {
+	background: #000;
+	height: 0.083em;
+	border: none;
+}
+
+p {
+	margin: 0.5em 0;
+	line-height: 1.5em;
+    text-align: justify;
+}
+
+p:first-child { 
+	margin: 0;
+}
+
+.left { float: left; }
+.text-left { text-align: left; }
+
+.text-center, article.text-center { text-align: center; }
+
+.right { float: right; }
+.text-right { text-align: right; }
+
+.flash .small {
+	float: right;
+	font-size: 85%;
+}
+
+.flash {
+	color: #FFF;
+	padding: 0.5em;
+	cursor: default;
+}
+
+.flash:hover {
+	text-decoration: underline;
+}
+
+.flash.error {
+	background: #711;
+}
+
+.flash.notice {
+	background: #8b832b;
+}
+
+.flash.success { 
+	background: #171;
+}
+
+.flash p {
+	margin: 0;
+	line-height: 1em;
+	display: inline;
+}
+
+footer {
+	padding: 1em 0em 2em 1em;
+	color: #777;
+	clear: both;
+	width: 83.333em;
+	margin: 0 auto;
+}
+
+ul#footer-nav {
+	list-style-type: none;
+	margin: 0;
+	float: left;
+}
+
+ul#footer-nav li {
+	display: inline;
+	text-transform: lowercase;
+}
+
+ul#footer-nav li a {
+	text-decoration: none;
+	color: #777;
+	margin-right: 1em;
+}
+
+ul#footer-nav li a:hover {
+	color: #222;
+	border-bottom: 0.083em dotted #777;
+}
+
+div#slideshow {
+	width: 83.333em;
+	height: 25em;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+ul#slideshowContent {
+    width:83.333em;
+    position: absolute;
+	top: 0;
+	margin: 0;
+}
+
+.column {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.three {
+	max-width: 33%;
+}
+
+.two {
+	max-width: 50%;
+}
+
+.one {
+	max-width: 100%;
+}
+
+.quarter {
+	max-width: 25%;
+}
+
+.three-quarters {
+	max-width: 75%;
+}
+
+/*ul#slideshowContent li:last-child {
+	top: -300px;
+}*/
+
+li.slideshowImage {
+    float: left;
+    position: relative;
+	display: none;
+}
+
+li.slideshowImage.current {
+	display: block !important;
+	top: 0px;
+}
+li.slideshowImage.next {
+	display: block !important;
+	top: -25em;
+	z-index: -1;
+}
+li.slideshowImage.hidden {
+	display: none;
+}
+
+li.slideshowImage span {
+    position: absolute;
+	font: 1.167em Arial, Helvetica, sans-serif;
+    padding: 0.833em 1.083em;
+    width: 83.333em;
+    background-color: #000;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    color: #fff;
+    display: none;
+}
+
+li.slideshowImage span h3 {
+	font-weight: bold;
+	font-size: 1.333em;
+}
+
+li.slideshowImage span p {
+	margin-top: 0.5em;
+}
+
+li.slideshowImage span.left {
+	top: 0;
+    left: 0;
+	width: 9.167em !important;
+	height: 23.333em;
+}
+
+li.slideshowImage span.right {
+	right: 0;
+	bottom: 0;
+	width: 9.167em !important;
+	height: 23.333em;
+}
+
+.top {
+	top: 0;
+	left: 0;
+}
+.bottom {
+	bottom: 0;
+    left: 0;
+}
+
+.science {
+	background-color: #3ab14a;
+}
+
+.technology {
+	background-color: #7398cf;
+}
+
+.engineering {
+	background-color: #ed5025;
+}
+
+.mathematics {
+	background-color: #ebaf20;
+}
+
+table {
+	width: 100%;
+}
+
+table th, table td {
+	text-align: center;
+	padding: 0.25em 0em;
+    border: none;
+	/*border: 0.083em solid #ccc;*/
+}
+
+table th {
+	font-family: "Noto Sans", sans-serif;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+table td {
+	
+}
+
+table.plain {
+	width: auto;
+}
+
+table.plain th, table.plain td {
+	padding: 5px 0px;
+	border: none;
+}
+
+/**************************************************/
+/** Content **/
+/**************************************************/
+
+section{
+    text-align: center;
+    margin-top: 6.25em; /** For the fixed header */
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+
+section.nomargin{
+    margin-top: 0;
+}
+
+article{
+	margin-top: 1em;
+    margin-bottom: 1em;
+	font-size: 1.167em;
+	text-align: left;
+}
+
+article ul{
+    margin-top: 0.5em;
+    margin-left: 2em;
+}
+
+div#nav-posts {
+	background: rgba(60, 60, 60, 0.3);
+	width: 1000px;
+	padding: 1em;
+	-moz-border-radius: 0 0 1em 1em;
+	border-radius: 0 0 1em 1em;
+}
+
+div#nav-posts a {
+	color: #273B4F;
+}
+
+div#nav-posts a:hover {
+	color: #0D1319;
+	border: none;
+}
+
+article.singular {
+	background: #FFF;
+	padding: 1em;
+	box-shadow: 0 0 0.5em #777;
+}
+
+article h1 {
+	width: 100%;
+	font-family: "Noto Sans", sans-serif;
+	font-weight: bold;
+	font-size: 2.5em;
+	margin: 0.25em 0 0.5em 0;
+}
+
+article h1 a:hover {
+	border: none;
+}
+
+article h2 {
+	font-family: "Noto Sans", sans-serif;
+	font-weight: bold;
+	font-size: 1.667em;
+	margin: 0.25em 0 0.5em 0;
+}
+
+article p {
+	text-indent: 2em;
+	margin-bottom: 0.5em;
+}
+
+article h3 {
+	font-weight: normal;
+	font-size: 1em;
+	color: #777;
+}
+
+div#comments {
+	background: rgba(80, 80, 80, 0.2);
+	padding: 0.5em 1em 1em 1em;
+	border-radius: 0 0 1em 1em;
+	width: 53.167em;
+	margin: 0 auto;
+}
+
+div#comments h3 {
+	font-size: 2.333em;
+	float: left;
+	text-shadow: 0 0.083em rgba(255, 255, 255, 0.5);
+}
+
+div#comments-meta {
+	display: inline;
+	float: right;
+}
+
+div#comments input, div#comments textarea {
+	border-radius: 0.417em;
+	background: #E8E8E8;
+	font-family: "Noto Sans", sans-serif;
+	border: 0.083em solid #777;
+	padding: 0.25em;
+}
+
+div#comments input:hover, div#comments textarea:hover {
+	background: #EEE;
+	box-shadow: 0 0 0.3em #2593d5;
+}
+
+div#comments input:focus, div#comments textarea:focus {
+	background: #EEE;
+}
+
+div#comments-meta label {
+	margin-left: 1em;
+}
+
+div#comments-meta input {
+	width: 12.5em;
+}
+
+div#comments-box {
+	padding-top: 1em;
+	clear: both;
+}
+
+div#comments-box textarea {
+	width: 100%;
+}
+
+div#maincol {
+	padding: 0.5em;
+	float: left;
+	width: 1000px;
+}
+
+div#sidebar {
+	float: right;
+	width: 18.75em;
+	padding: 1em;
+}
+
+div#sidebar h3 {
+	font-weight: bold;
+	font-size: 1.167em;
+	margin-bottom: 0.25;
+}
+
+div#sidebar ul.widgets {
+	margin: 0;
+}
+
+div#sidebar ul.widgets li.widget-container {
+	list-style-type: none;
+	margin-bottom: 1em;
+}
+
+div#sidebar li {
+	margin-bottom: 0.167em;
+}
+
+div.clear {
+	clear: both;
+}
+
+div#faqQuestions {
+	margin-top: 2em;
+}
+
+div#faqQuestions a {
+	color: #497097;
+}
+
+ul {
+	list-style-type: disc;
+	margin: 1em 0 1em 4em;
+}
+
+ol {
+	list-style-type: decimal;
+	margin-left: 4em;
+}
+
+li {
+	margin-bottom: 0.5em;
+	line-height: 1.3em;
+}
+
+ul ul {
+	margin: 0 0 0 2em;
+	list-style-type: circle;
+}
+
+em {
+	font-style: italic;
+}
+
+
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote {
+	margin: 0; padding: 0; border: 0;
+}
+/*end*/
+nav ul ul {
+	top:-999px;
+	position:absolute;
+	transition: top 0.25s ease;
+}
+
+nav ul li:hover > ul {
+	top:2.625em;
+}
+
+nav ul{
+	background-color:transparent;
+	list-style:none;
+	font-family:"Noto Sans", sans-serif;
+	margin-top:0.167em	;
+	/* margin-left:37%; */
+	
+	position:relative;
+	/* display: inline-table; */
+}
+
+nav ul:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+nav ul li {
+	/* float:left; */
+}
+
+nav ul li:hover{
+	/* background-color:#333333; */
+}
+
+nav ul li a {
+	/* display: block; */
+	padding: 0.417em;
+	color:#fff;
+	
+}
+
+nav ul ul {
+	background-color:#222;
+	border-radius: 0px;
+	padding: 0;
+}
+
+nav ul ul li{
+	float: none;
+	position:relative;
+}
+
+nav ul ul li a{
+	padding: 0.417em 0.667em;
+	color: #fff;
+	line-height:1.667em;
+	font-size:1.333em;
+}
+
+nav ul ul ul{
+	position:absolute;
+	left:100%;
+	top:0;
+}
+input[type='text'], input[type='password'], input[type='submit'], select, button, textarea {
+	background: #E2E2E2;
+	border: 0.083em solid #CCC;
+	padding: 0.25em;
+	font-family: Tahoma, sans-serif;
+	font-size: 1em;
+	margin: 0 1em;
+}
+
+input[type='text']:hover, input[type='password']:hover, input[type='submit']:hover, select:hover, button:hover, textarea:hover {
+	background: #DDD;
+	border: 1px solid #BBB;
+}
+
+input[type='text']:focus, input[type='password']:focus, input[type='submit']:active, select:focus, button:active, textarea:focus {
+	background: #EEE;
+	border: 0.083em solid #AAA;
+}
+
+input[type='text'], input[type='password'] {
+	width: 14.583em;
+}
+
+input[type='text'].num {
+	width: 2.083em;
+}
+
+input[type='submit'] {
+	padding-left: 0.417em;
+	text-transform: uppercase;
+	letter-spacing: 0.167em;
+}
+
+.sub_input{
+	width: 34.2em !important;
+}
+
+table#contact textarea {
+	margin: 1em;
+	width: 37.5em;
+}
+
+#board-wrap{
+	background-color:#dddddd;
+}
+
+#board{
+	width:71.786em;
+	margin:0 auto;
+}
+
+#mentors-wrap{
+	background-color:#4a3e3d;
+}
+
+#mentors{
+	width:71.786em;
+	margin:0 auto;
+}
+
+#mentors-wrap,#board-wrap{
+	padding:0.714em;
+}
+
+#board-head{
+	background-image:url(../images/MeetTheBoard.svg);
+	background-position:center center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	height:17.857em;
+}
+
+#mentor-head{
+	background-image:url(../images/MeetTheMentors.svg);
+	background-position:center center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	height:17.857em;
+}
+
+.team-member p{
+	font-size:0.95em;
+	text-align:justify;
+	width:17.857em;
+	margin:0 auto;
+	line-height:1.4em;
+}
+
+#mentors p, #mentors h2, #mentors h3{
+	color:#DDD;
+}
+
+#board p, #board h2, #board h3{
+	color:#222;
+}
+
+.team-member h2, .team-member h3{
+	font-size:1.143em !important;
+	margin:5px 0;
+}
+
+#load-wrap{
+	margin:5px auto;
+	text-align:center;
+	width:83.333em;
+}
+
+#sm-wrap{
+	position:fixed;
+	top:300px;
+	border-radius:0px 8px 8px 0px;
+	background-color:#222;
+	border-color:#333;
+	box-shadow:0px 0px 10px #000;
+	padding:2px 5px 8px;
+	z-index:999;
+}
+
+#loading2{
+	margin:auto;
+	padding:5px;
+}
+
+/**************************************************/
+/** Summer STEM Page CSS
+/**************************************************/
+
+#jumbotron{
+    width: 100%;
+    overflow: hidden;
+}
+
+#jumbotron img{
+    left: 50%;
+    margin-left: -960px;
+    position: relative;
+}
+#left{
+    width: 50%;
+    padding-right: 20px;
+    clear: left;
+    float: left;
+    overflow: hidden;
+}
+#left img{
+    max-width: 480px;
+}
+.department #left img{
+    margin-top: 1em;   
+}
+#right{
+    width: 50%;
+    padding-left: 20px;
+    clear: right;
+    float: right;
+    overflow: hidden;
+}
+#right img{
+    max-width: 480px;
+}
+.department #right img{
+    position: relative;
+    left: -20px;
+}
+#jumpTo{
+    clear: both;   
+}
+#jumpTo img{
+    max-width: 200px;
+    -webkit-transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -o-transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out;
+}
+#jumpTo img.top:hover{
+    opacity: .8;
+    text-decoration: none;
+}
+div.department h1{
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 4.5em;
+}
+div.department h1 img{
+    height: .75em;
+    padding-right: .2em;
+}
+div.department{
+    text-indent: 2em;
+    font-family: 'Noto-sans', 'sans-serif';
+    font-size: 14px;
+}
+#largerText{
+    font-size: 1.5em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    text-indent: 0px;
+}
+#noIndent{
+    text-indent: 0px;
+    font-size: 100%;
+}
+table#when, table#when td{
+    border: 0.083em solid #222;
+}
+table#when td span{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5em;
+}
+
+/* Fixes anchor links being blocked by the fixed header */
+.offset:before {
+	display: block; 
+ 	content: " "; 
+  	height: 76px;      /* Give height of your fixed element */
+        margin-top: -76px; /* Give negative margin of your fixed element */  	
+        visibility: hidden; 
+}
+
+/**************************************************/
+/** Media Queries **/
+/**************************************************/
+
+@media screen and (max-width: 767px) {
+	div#content {
+		width: auto;
+	}
+
+    #left{
+        width: 100%;
+        padding-right: 0px;
+        clear: both;
+        float: none;
+        overflow: hidden;
+    }
+    #right{
+        width: 100%;
+        padding-left: 0px;
+        clear: both;
+        float: none;
+        overflow: hidden;
+    }
+
+    #social-media, #sm-wrap {
+        display: none;   
+    }
+   
+	header nav {
+		padding-right: 0;
+		overflow: hidden;
+	}
+	
+	nav #mobile-logo {
+		display: block;
+	}
+
+	ul#nav, ul.sub-menu {
+		background: #FFF;
+		/*float: none;*/
+		width: 100%;
+	}
+
+	ul#nav li, ul.sub-menu li {
+		border-bottom: 1px solid #F4F4F4;
+		display: block;
+		width: 100%;
+		height: 48px;
+	}
+	
+	ul#nav li#logo {
+		display: none;
+	}
+	
+	ul#nav li.has-sub-menu:after {
+		content: "\27A4";
+		position: absolute;
+		right: 1em;
+		width: 14px;
+		height: 20px;
+		top: 14px;
+	}
+
+	ul#nav li ul.sub-menu {
+		position: fixed;
+		top: 75px;
+		left: 100%;
+		width: 100%;
+		box-shadow: none;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	ul#nav li a, ul.sub-menu li a {
+		line-height: 48px;
+		height: 48px;
+		color: #333;
+	}
+
+	header nav div#button {
+		display: block;
+		width: 40px;
+		height: 40px;
+		margin: 17.5px 0;
+		position: absolute;
+		right: 1em;
+		top: 0;
+		background: #777;
+		border-radius: 4px;
+	}
+
+	header nav div#button span {
+		display: block;
+		width: 24px;
+	        height: 4px;
+        	background: #ccc;
+		box-shadow: 0 8px 0 0 #ccc,
+			0 16px 0 0 #ccc;
+		margin: 10px 8px;
+	}
+}

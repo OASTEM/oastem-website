@@ -7,8 +7,8 @@ $dbname = 'database_name';
 $dbuser = 'user_name';
 $dbpass = 'user_password';
 
-$rt = '/';
-$rtexact = $_SERVER['DOCUMENT_ROOT'] . '/';
+$wwwRoot = __DIR__;
+$libRoot = dirname($wwwRoot) . '/lib';
 
 $db_list = array(
 	"id" => array(
