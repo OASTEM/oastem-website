@@ -13,16 +13,16 @@ $templ->render('header');
 <script src="/js/uac.js"></script>
 <script src="/js/posts.js"></script>
 
-<!--
-	<div id="slideshow">
+
+<!--<div id="slideshow">
     <ul id="slideshowContent">
     	<img id="loading2" src="/images/ajax-loader.gif">
     </ul>
     </div>
-    -->
+    
 <div id="jumbotron">
     <a href="summer/"><img src="images/summerjumbo.jpg"></a>
-</div>
+</div>-->
     <div id="nfd-wrapper">        
     <?php
         if($logged_in){

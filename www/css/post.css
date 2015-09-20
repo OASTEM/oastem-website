@@ -1,5 +1,5 @@
 #nfd-wrapper{
-	width:1005px;
+	width:1000px;
 	margin:1em auto;
 }
 
@@ -127,7 +127,6 @@
 }
 
 .post-wrapper{
-	width:25em;
 	margin:1.25em;
 	display:inline-block;
 	text-align:center;
@@ -230,4 +229,29 @@ strong          { font-weight: bolder }
 .delete-button:hover{
     background: #444;
     border-style: none;
+}
+
+@media screen and (max-width: 767px) {
+    .post-wrapper{
+        width: 100%;
+    }
+    .content-wrapper{
+        width: 100%;
+    }
+    .post-header{
+        width: 100%;   
+    }
+    #nfd-wrapper{
+        width: 100%;   
+    }
+    .container{
+        width: 24%;
+        margin: 0;
+    }
+    .container img{
+        float: none;
+    }
+    #cat h2{
+        display: none;   
+    }
 }
