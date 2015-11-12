@@ -13,16 +13,21 @@ $templ->render('header');
 <link rel="stylesheet" href="/css/post.css" />
 <script src="/js/uac.js"></script>
 <script src="../../js/posts.js"></script>
-<!--
+<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+<script>var newBox = tinyMCE.init({
+    selector:'#new-content',
+    plugins:"textcolor",
+    toolbar:"forecolor backcolor"
+})</script>
+
 	<div id="slideshow">
     <ul id="slideshowContent">
     	<img id="loading2" src="images/ajax-loader.gif">
     </ul>
     </div>
-    -->
-<div id="jumbotron">
+<!--<div id="jumbotron">
     <a href="summer/"><img src="images/summerjumbo.jpg"></a>
-</div>
+</div>-->
     <div id="nfd-wrapper">        
     <?php
         if($logged_in){

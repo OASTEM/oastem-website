@@ -6,10 +6,10 @@
 	if(isset($_GET['delete'])){ //when ?delete
 		if(isset($_POST['pid'])){
 			$pid = $_POST['pid'];
-			$data = $db->query("SELECT uid FROM posts WHERE pid=$pid")->fetch_assoc();
+			$data = $db->query("SELECT uid FROM $DBT_POSTS WHERE pid=$pid")->fetch_assoc();
 			$uid = $data['uid'];
 			if($logged_in && ($_SESSION['uid'] == $uid || $_SESSION['sa'] == 1)){ //check permissions
-				$sql = "UPDATE posts SET deleted=1 WHERE pid=$pid";
+				$sql = "UPDATE $DBT_POSTS SET deleted=1 WHERE pid=$pid";
 				
 				$db->query($sql);
 				if($db->affected_rows == 1) echo 'deleted';
@@ -24,7 +24,7 @@
 		if(isset($_POST['pid'])){
 			$pid = $_POST['pid'];
 			if($logged_in && $_SESSION['sa'] == 1){
-				$sql = "UPDATE posts SET deleted=0 WHERE pid=$pid";
+				$sql = "UPDATE $DBT_POSTS SET deleted=0 WHERE pid=$pid";
 				
 				$db->query($sql);
 				if($db->affected_rows == 1) echo 'undeleted';
@@ -38,14 +38,14 @@
 	}elseif(isset($_GET['modify'])){
 		if(isset($_POST['pid'])){
 			$pid = $_POST['pid'];
-			$data = $db->query("SELECT uid FROM posts WHERE pid=$pid")->fetch_assoc();
+			$data = $db->query("SELECT uid FROM $DBT_POSTS WHERE pid=$pid")->fetch_assoc();
 			$uid = $data['uid'];
 			if($logged_in && ($_SESSION['uid'] == $uid || $_SESSION['sa'] == 1)){
 				if(isset($_POST['ntitle']) && isset($_POST['ncontent'])){
 					$ntitle = $db->real_escape_string($_POST['ntitle']);
 					$ncontent = $db->real_escape_string($_POST['ncontent']);
 					
-					$sql = "UPDATE posts SET title='$ntitle', content='$ncontent' WHERE pid=$pid";
+					$sql = "UPDATE $DBT_POSTS SET title='$ntitle', content='$ncontent' WHERE pid=$pid";
 					
 					$db->query($sql);
 					
@@ -68,7 +68,7 @@
 				$title = $db->real_escape_string($_POST['title']);
 				$content = $db->real_escape_string($_POST['content']);
 				
-				$sql = "INSERT INTO posts (uid, title, content) VALUES ($uid, '$title', '$content')";
+				$sql = "INSERT INTO $DBT_POSTS (uid, title, content) VALUES ($uid, '$title', '$content')";
 							
 				$db->query($sql);
 							
@@ -81,12 +81,12 @@
 		if(isset($_POST['lim'])){
 			$lim = $_POST['lim'];
 			$sql = "SELECT * FROM (
-				SELECT * FROM posts WHERE deleted = 0 ORDER BY pid DESC LIMIT $lim, 24
+				SELECT * FROM $DBT_POSTS WHERE deleted = 0 ORDER BY pid DESC LIMIT $lim, 24
 			) sub
 			ORDER BY pid DESC";
 		}else{
 			$sql = "SELECT * FROM (
-				SELECT * FROM posts WHERE deleted = 0 ORDER BY pid DESC LIMIT 24
+				SELECT * FROM $DBT_POSTS WHERE deleted = 0 ORDER BY pid DESC LIMIT 24
 			) sub
 			ORDER BY pid DESC";
 		}
@@ -94,7 +94,7 @@
 		listPosts($sql,$db);
 		
 	}elseif(isset($_GET['getall'])){
-		$sql = "SELECT * FROM posts ORDER BY pid DESC";
+		$sql = "SELECT * FROM $DBT_POSTS ORDER BY pid DESC";
 		listPosts($sql,$db);
 	}else{
 		echo 'no action';
@@ -129,7 +129,7 @@
 					</div>
 					<div class='content-wrapper'>
 						<h3 class='title'>" . $row['title'] . "</h3>
-						<p class='content'>" . $row['content'] . "</p>
+						<div class='content'>" . $row['content'] . "</div>
                         <br/>
                         <p class='author'>Posted by " . $op['first_name'] . " " . $op['last_name'] . "<br/>" . $op['position'] . "</p>
 					</div>

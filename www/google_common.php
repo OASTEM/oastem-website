@@ -1,12 +1,11 @@
 <?php
 
-$lib = "/var/www/stem/google-api-php-client/src/Google/";
-
 require_once "config.php";
-require_once $lib . "Client.php";
-require_once $lib . "Service/Drive.php";
-require_once $lib . "Service/Oauth2.php";
-require_once $lib . "Auth/AssertionCredentials.php";
+require_once $LIB_GOOGLE . "autoload.php";
+//require_once $LIB_GOOGLE . "Client.php";
+//require_once $LIB_GOOGLE . "Service/Drive.php";
+//require_once $LIB_GOOGLE . "Service/Oauth2.php";
+//require_once $LIB_GOOGLE . "Auth/AssertionCredentials.php";
 
 function startsWith($haystack, $needle) {
     // search backwards starting from haystack length characters from the end
