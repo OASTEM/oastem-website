@@ -106,8 +106,18 @@
 	background-color:#9377d8;
 	clear:right;
 }
-#login, #logout{
+#logout{
 	background-color:#FF8C00;
+}
+
+#login{
+    margin: auto;
+	position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:#FF8C00;
 }
 
 .hidden{
