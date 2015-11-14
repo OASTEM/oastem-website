@@ -339,5 +339,11 @@ $(function() {
 		math = !math;
 		refreshFilters();
 	});
+    
+    newBox = tinyMCE.init({
+        selector:'#new-content',
+        plugins:"textcolor",
+       toolbar:"undo redo | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
+    })
 });
 

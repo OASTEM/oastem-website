@@ -162,6 +162,7 @@
 	width:25em;
 	background-color:white;
 	float:left;
+    overflow:auto;
 }
 
 .content,.author{

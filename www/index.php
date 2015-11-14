@@ -12,13 +12,8 @@ $templ->render('header');
 ?>
 <link rel="stylesheet" href="/css/post.css" />
 <script src="/js/uac.js"></script>
-<script src="../../js/posts.js"></script>
 <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
-<script>var newBox = tinyMCE.init({
-    selector:'#new-content',
-    plugins:"textcolor",
-    toolbar:"forecolor backcolor"
-})</script>
+<script src="../../js/posts.js"></script>
 
 	<div id="slideshow">
     <ul id="slideshowContent">
