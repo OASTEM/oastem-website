@@ -5,138 +5,16 @@ $m2p_post_param_keys = array(
     "sid", "key", "uid", "subject", "message"
 );
 
-$acceptable_tags = "
-    <!DOCTYPE>
-    <a>
-    <abbr>
-    <acronym>
-    <address>
-    <applet>
-    <area>
-    <article>
-    <aside>
-    <audio>
-    <b>
-    <base>
-    <basefont>
-    <bdi>
-    <bdo>
-    <big>
-    <blockquote>
-    <body>
-    <br>
-    <button>
-    <canvas>
-    <caption>
-    <center>
-    <cite>
-    <code>
-    <col>
-    <colgroup>
-    <command>
-    <datalist>
-    <dd>
-    <del>
-    <details>
-    <dfn>
-    <dir>
-    <dl>
-    <dt>
-    <em>
-    <embed>
-    <fieldset>
-    <figcaption>
-    <figure>
-    <font>
-    <footer>
-    <form>
-    <frame>
-    <frameset>
-    <h1>
-    <h2>
-    <h3>
-    <h4>
-    <h5>
-    <h6>
-    <head>
-    <header>
-    <hgroup>
-    <hr>
-    <html>
-    <i>
-    <iframe>
-    <img>
-    <input>
-    <ins>
-    <kbd>
-    <keygen>
-    <label>
-    <legend>
-    <li>
-    <link>
-    <map>
-    <mark>
-    <menu>
-    <meta>
-    <meter>
-    <nav>
-    <noframes>
-    <noscript>
-    <object>
-    <ol>
-    <optgroup>
-    <option>
-    <output>
-    <p>
-    <param>
-    <pre>
-    <progress>
-    <q>
-    <rp>
-    <rt>
-    <ruby>
-    <s>
-    <samp>
-    <script>
-    <section>
-    <select>
-    <small>
-    <source>
-    <span>
-    <strike>
-    <strong>
-    <style>
-    <sub>
-    <summary>
-    <sup>
-    <table>
-    <tbody>
-    <td>
-    <textarea>
-    <tfoot>
-    <th>
-    <thead>
-    <time>
-    <title>
-    <tr>
-    <track>
-    <tt>
-    <u>
-    <ul>
-    <var>
-    <video>
-    <wbr>
-
-";
-
 foreach($m2p_post_param_keys as $key){
     if(!isset($_POST[$key])){
         exit("MissingParameter");
     }
 }
 
-if(checkKeys($_POST['sid'],$_POST['key'])){
-    post($_POST['uid'],strip_tags($_POST['message'],$acceptable_tags),$_POST["subject"]);
+if(checkKeys($_POST['sid'],$_POST['key']){
+    $processedMsg = stripSig($_POST['message']); 
+    $processedMsg = lastRepl("--","",$processedMsg);
+    post($_POST['uid'],$processedMsg,$_POST["subject"]);
     echo "success";
 }else{
     echo "error";
@@ -176,6 +54,41 @@ function post($uid, $msg, $subj){
     $db->query($sql);
     
     $db->close();
+}
+
+function stripSig($str){
+    $dom = new DOMDocument;
+    $dom->loadHTML($str);
+    
+    $divs = $dom->getElementsByTagName("div");
+    
+    for($i = $divs->length - 1; $i >= 0; $i--){
+        $div = $divs->item($i);
+        echo $div->getAttribute("dir");
+        if($div->getAttribute("dir") == "ltr"){
+            $div->parentNode->removeChild($div);
+            break;
+        }
+    }
+    /**foreach($divs as $div){
+        if($div->attributes->getNamedIten("dir") == "ltr"){
+            $div->parentNode->removeChild($div);
+            break;
+        }
+    }*/
+    return $dom->saveHTML();
+}
+
+function lastRepl($search, $replace, $subject)
+{
+    $pos = strrpos($subject, $search);
+
+    if($pos !== false)
+    {
+        $subject = substr_replace($subject, $replace, $pos, strlen($search));
+    }
+
+    return $subject;
 }
 
 ?>
