@@ -11,7 +11,7 @@ foreach($m2p_post_param_keys as $key){
     }
 }
 
-if(checkKeys($_POST['sid'],$_POST['key']){
+if(checkKeys($_POST['sid'],$_POST['key'])){
     $processedMsg = stripSig($_POST['message']); 
     $processedMsg = lastRepl("--","",$processedMsg);
     post($_POST['uid'],$processedMsg,$_POST["subject"]);
@@ -76,7 +76,7 @@ function stripSig($str){
             break;
         }
     }*/
-    return $dom->saveHTML();
+    return trim($dom->saveHTML());
 }
 
 function lastRepl($search, $replace, $subject)
