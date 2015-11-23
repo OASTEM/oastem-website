@@ -1,5 +1,7 @@
 <?php
-if(isset($_COOKIE['nfd_sid'])){
+require "../common.php";
+
+if($logged_in){
 	header("Location: http://". $_SERVER['SERVER_NAME']);
 }
 ?>
@@ -23,11 +25,6 @@ if(isset($_COOKIE['nfd_sid'])){
 body{
 	font-family:'Titilium Web';
 	font-size:12px;
-}
-#login{
-    display: inline-block;
-    vertical-align: middle;
-    margin:50px auto;
 }
 </style>
 

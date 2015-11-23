@@ -4,7 +4,7 @@
 
 	$drive = getDriveService();
 	$ct = 0;
-	file_put_contents('desc.txt',downloadFile($drive, $drive->files->get('0ByDyUerJE7tFLVB4aDVIazVCU1U'), getClient()));
+	//file_put_contents('desc.txt',downloadFile($drive, $drive->files->get('0ByDyUerJE7tFLVB4aDVIazVCU1U'), getClient()));
 	$sets = split("\n",file_get_contents('desc.txt'));
 	$desc = array();
 	foreach($sets as $val){

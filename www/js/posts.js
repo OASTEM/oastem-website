@@ -200,7 +200,29 @@ $(function() {
 			{
 				text: 'Save',
 				click: function(){
-					$("#new-post-form").ajaxSubmit({
+					/**$.ajax({
+                        url:"/ajax_posts.php?new",
+                        method:"POST",
+                        success:function(response){
+                            if(response == 'success'){
+								reloadp();
+								newSucc = true;
+								newDialog.dialog("close");
+							}else{
+								alert("There was an error processing your request.");
+								console.log('Received:');
+								console.log(response);
+                                console.log($('#new-title').val());
+                                console.log(newBox.getBody());
+							}
+                        },
+                        data:{
+                            title:$('#new-title').val(),
+                            content:newBox.getBody()
+                        }
+                    });*/
+                    tinyMCE.get('new-content').save();
+                    $("#new-post-form").ajaxSubmit({
 						success:function(response){
 							if(response == 'success'){
 								reloadp();
@@ -263,7 +285,10 @@ $(function() {
 								editDialog.dialog("close");
 							}else{
 								alert("There was an error processing your request.");
+                                console.log('Received:');
+								console.log(response);
 							}
+                            
 						},
 						data:{pid:editPid}
 					});
@@ -280,7 +305,7 @@ $(function() {
 				if(!editSucc){
 					if(confirm('Continuing will discard changes.')){
 							$(this).find("#title-edit-box").val("");
-							$(this).find("#content-edit-box").val("");
+							//$(this).find("#content-edit-box").val(""); TODO: Update to MCE
 					}else{
 						return false;
 					}
@@ -314,5 +339,11 @@ $(function() {
 		math = !math;
 		refreshFilters();
 	});
+    
+    newBox = tinyMCE.init({
+        selector:'#new-content',
+        plugins:"textcolor",
+       toolbar:"undo redo | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
+    })
 });
 
