@@ -1,6 +1,6 @@
 /*@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,300italic,300,600,600italic,700italic);*/
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
-@import url(http://fonts.googleapis.com/css?family=Roboto:100);
+@import url(http://fonts.googleapis.com/css?family=Roboto:900);
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web);
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -88,9 +88,12 @@ table {
 .row{
     clear: both;   
 }
+h1,h2,h3,h4,h5,h6{
+    font-family: "Roboto", sans-serif;
+}
 
-h1,h2,h3,h4,h5,h6,p,td{
-	font-family:"Noto Sans";
+p,td{
+	font-family:"Noto Sans", sans-serif;
 }
 
 *, *:before, *:after {
@@ -513,7 +516,6 @@ div#nav-posts a:hover {
 
 div.post {
 	margin-top: 1em;
-	font-family: Georgia, "Times New Roman", serif;
 	font-size: 1.167em;
 	text-align: left;
 }
@@ -744,6 +746,13 @@ nav ul ul ul{
 	position:absolute;
 	left:100%;
 	top:0;
+}
+input[type='text']{
+    width: 100%;
+}
+textarea{
+   width: 100%;
+    resize: none;
 }
 
 input[type='text'], input[type='password'], input[type='submit'], select, button, textarea {
