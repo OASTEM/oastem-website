@@ -63,7 +63,7 @@ $(document).ready(function() {
 				<li id="logo"><a href="/index.html"><img src="../../images/r11-White-OA.svg"></a></li>
 				<li><a href="/faq">FAQ</a></li>
 				<li>
-                    <a target="_blank" href="http://oastem.org/summersignup">Apply</a>
+                    <a target="_blank" href="/signup">Sign Up</a>
                     <!--
                     <ul class="sub" style="right:8em;">
                         <li><a href="/docs/STEMMemberApp.pdf">Member</a></li>
