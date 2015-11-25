@@ -7,59 +7,76 @@ $templ->render('header');
 
 $isPosted = isset($_POST["submit"]);
 if ($isPosted){
-$name = $_POST["name"];
-$email = $_POST["email"];
-$parent = $_POST["parent"];
-$grade = $_POST["grade"];
-$departments = $_POST["departments"];
-$message = $_POST["message"];
-$subject = "Member Sign Up";
-$mail = new PHPMailer;
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $parent = $_POST["parent"];
+    $grade = $_POST["grade"];
+    $departments = $_POST["departments"];
+    $message = $_POST["message"];
+    $subject = "Member Sign Up";
 
-$body = "The following student is interested in joining your department!<br>";
-$body .= "Name: " . $name . "<br>Email: " . $email;
-if (isset($_POST["parent"]))
-    $body .= "<br>Parent Email: " . $parent;
-$body .= "<br>Grade: " . $grade;
-if (isset($_POST["message"]))
-    $body .= "<br><br>The student also had the following message:<br>" . $message;
+    /*$mail = new PHPMailer;*/
 
-$mail->isSMTP();
-$mail->Host = 'mail.google.com';
-$mail->SMTPAuth = false;
-//$mail->SMTPSecure = 'tls';
-$mail->Port = 587;
-$mail->setFrom('contact@oastem.org', 'Robot from the Website');
-$mail->isHTML(true);
-$mail->addAddress('executives@oastem.org');
-$mail->Subject = $subject;
-$mail->Body = $body;
+    $body = "The following student is interested in joining your department!<br>";
+    $body .= "Name: " . $name . "<br>Email: " . $email;
+    if ($parent != null)
+        $body .= "<br>Parent Email: " . $parent;
+    $body .= "<br>Grade: " . $grade;
+    if ($message != null)
+        $body .= "<br><br>The student also had the following message:<br>" . $message;
 
-if(in_array('science', $departments))
-    $mail->addCC('science@oastem.org');
-if(in_array('technology', $departments))
-    $mail->addCC('technology@oastem.org');
-if(in_array('robotic', $departments))
-    $mail->addCC('engineering@oastem.org');
-if(in_array('civil', $departments))
-    $mail->addCC('civilengineering@oastem.org');
-if(in_array('math', $departments)){
-    if($grade > 8)
-        $mail->addCC('math@oastem.org');
-    else
-        $mail->addCC('mathcounts@oastem.org');
-}
+    /*$mail->isSMTP();
+    $mail->Host = 'mail.google.com';
+    $mail->SMTPAuth = true; 
+    $mail->Username = 'posts@oastem.org';
+    $mail->Password = 'Pa5$w0rd[dot]txt'; 
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+    $mail->setFrom('contact@oastem.org', 'Robot from the Website');
+    $mail->isHTML(true);
+    $mail->addAddress('executives@oastem.org');
+    $mail->Subject = $subject;
+    $mail->Body = $body;*/
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    if(!$mail->send()) {
-        setflash("error", "Message could not be sent. Mailer Error: " . $mail ->ErrorInfo);
-    } else {
-        setflash("success", "Success! Submission has been sent.");
+    // Additional headers
+    $headers .= 'To: executives@oastem.org';//Mary <mary@example.com>, Kelly <kelly@example.com>' . "\r\n";
+    if(in_array('science', $departments))
+        //$mail->addCC('science@oastem.org');
+        $headers .= ', science@oastem.org';
+    if(in_array('technology', $departments))
+        //$mail->addCC('technology@oastem.org');
+        $headers .= ', technology@oastem.org';
+    if(in_array('robotic', $departments))
+        //$mail->addCC('engineering@oastem.org');
+        $headers .= ', engineering@oastem.org';
+    if(in_array('civil', $departments))
+        //$mail->addCC('civilengineering@oastem.org');
+        $headers .= ', civilengineering@oastem.org';
+    if(in_array('math', $departments)){
+        if($grade > 8)
+            //$mail->addCC('math@oastem.org');
+            $headers .= ', math@oastem.org';
+        else
+            //$mail->addCC('mathcounts@oastem.org');
+            $headers .= ', mathcounts@oastem.org';
     }
-}
-else{
-    setflash("error", "Please enter a valid email address");
-}
+    $headers .= "\r\n";
+    
+    $to = "";
+
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if(!mail($to, $subject, $body, $headers)) {
+            setFlash("error", "Message could not be sent.");
+        } else {
+            setFlash("success", "Success! Submission has been sent.");
+        }
+    }
+    else{
+        setFlash("error", "Please enter a valid email address");
+    }
 }
 ?>
 <section>
