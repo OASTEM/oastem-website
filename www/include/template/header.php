@@ -3,7 +3,7 @@
 <head>
 <title><?php print Template::getInstance()->getVar('header', 'title'); ?> &raquo; OA STEM</title>
 <!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js">
 </script>
 <![endif]-->
 <script type="text/javascript" src="/js/jquery.js"></script>
